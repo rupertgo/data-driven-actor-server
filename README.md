@@ -42,7 +42,7 @@ VizBlock node(
   "null",       // Our ID
   "<wifi_net>",  //Wifi Access Point
   "<wifi_password>",  //WiFi Password
-  "vizblocks-server.com",//IP address
+  "111.111.11",//IP address
    8883,         //Port for Node RED server
    "<mqtt_user>",  //MQTT username
    "<mqtt_password>",    //MQTT password
