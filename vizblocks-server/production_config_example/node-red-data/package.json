@@ -1,0 +1,12 @@
+{
+    "name": "node-red-project",
+    "description": "Remote Node-Red Server for VizBlocks",
+    "scripts": {
+        "start": "node $NODE_OPTIONS node_modules/node-red/red.js $FLOWS"
+    },
+    "version": "0.0.1",
+    "private": true,
+    "dependencies": {
+        
+    }
+}
