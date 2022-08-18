@@ -7,13 +7,12 @@ Set up a remote VizBlocks server using Docker.
 ### Docker set up
 1. [Install Docker and Docker Compose](https://docs.docker.com/compose/install/).
 2. [Install Mosquitto](https://mosquitto.org/download/).
-3. Duplicate the `dev_config_example` folder and rename it to `dev_config`.
 
-4. In a terminal, navigate to the project root and use docker compose to start the Node Red and MQTT broker containers:
+3. In a terminal, navigate to the project root and use docker compose to start the Node Red and MQTT broker containers:
 ```
 docker-compose up --force-recreate --build
 ```
-5. Go to http://localhost:1880/ and log into Node Red with the credentials CivicDigits and DataIsFun!
+4. Go to http://localhost:1880/ and log into Node Red with the credentials CivicDigits and DataIsFun!
 
 ### Reset/Create New MQTT Password
 1. On lines 126 and 127 in [dev_config/node-red-data/settings.js](dev_config/node-red-data/settings.js), replace `<NODE_RED_DEV_USER>` and `<NODE_RED_DEV_PASSWORD>`  with the username and password that you'd like to use. *Note: passwords should be encrypted using bcrypt, see [here](https://nodered.org/docs/user-guide/runtime/securing-node-red)*.
