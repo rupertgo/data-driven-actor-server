@@ -1,0 +1,8 @@
+{
+    "projects": {
+        "DataDrivenActor": {
+            "credentialSecret": false
+        }
+    },
+    "activeProject": "DataDrivenActor"
+}

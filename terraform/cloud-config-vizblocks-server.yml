@@ -1,0 +1,94 @@
+#cloud-config
+
+# Docker's default MTU is larger than that provided by OpenStack.
+# Make sure it's smaller or networking won't work.
+write_files: [
+  {
+    "path": "/etc/docker/daemon.json",
+    "content": "{ \"mtu\": 1450 }"
+  },
+  {
+    "path": "/etc/nginx/sites-available/${url}",
+    "content": "server {
+                      listen 80;
+                      listen [::]:80;
+
+                      server_name ${url};
+
+                      location / {
+                          proxy_pass http://localhost:1880;
+                          proxy_http_version 1.1;
+                          proxy_set_header Upgrade $http_upgrade;
+                          proxy_set_header Connection 'upgrade';
+                          proxy_set_header Host $host;
+                          proxy_cache_bypass $http_upgrade;
+                      }
+                }"
+  }
+]
+
+packages:
+  - apt-transport-https
+  - ca-certificates
+  - curl
+  - gnupg
+  - lsb-release
+  - acl
+
+runcmd:
+  - [ apt-get, update ]
+  - [ apt-get, install, nginx, -y]
+  # Set up firewall to allow Nginx, SSH, and MQTT ports
+  - [ ufw, allow, "Nginx Full"]
+  - [ ufw, allow, "OpenSSH"]
+  # MQTT Ports
+  - [ ufw, allow, "1883"]
+  - [ ufw, allow, "8883"]
+  # Enable firewall
+  - [ ufw, enable]
+
+
+  # Add rate limiting in Nginx
+  - [ ln, -s, /etc/nginx/sites-available/${url}, /etc/nginx/sites-enabled/ ]
+  - [ systemctl, restart, nginx ]
+
+  # Install Certbot
+  - apt install certbot python3-certbot-nginx -y
+  - [ certbot, --non-interactive, --agree-tos, --redirect, -m, "${email}", --nginx, -d, ${url} ]
+  # Add permissions for mqtt broker container to access certificates
+  - setfacl -R -m u:1883:rX /etc/letsencrypt/archive/${url}
+  
+  #Install Docker on the instance
+  - curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add -
+  - add-apt-repository "deb [arch=$(dpkg --print-architecture)] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+  - apt-get update -y
+  - apt-get install -y docker-ce docker-ce-cli containerd.io
+  - systemctl start docker
+  - systemctl enable docker
+
+  - service docker start
+  - systemctl enable docker # start docker on reboot
+
+  #Register the new Runner to our Gitlab account
+  - >
+    docker run --rm -v /srv/gitlab-runner/config:/etc/gitlab-runner gitlab/gitlab-runner register
+    --non-interactive
+    --executor "docker"
+    --docker-image "docker:latest"
+    --url "https://git.ecdf.ed.ac.uk"
+    --registration-token "${gitlab_reg_token}"
+    --description "vizblocks-server-runner"
+    --tag-list "production"
+    --run-untagged="false"
+    --locked="false"
+    --access-level="not_protected"
+    --docker-volumes "/var/run/docker.sock:/var/run/docker.sock"
+    --docker-volumes "/builds:/builds:rw"
+
+  #Run the Gitlab Runner demon
+  - >
+    docker run -d --name gitlab-runner --restart always
+    -v /srv/gitlab-runner/config:/etc/gitlab-runner
+    -v /var/run/docker.sock:/var/run/docker.sock
+    gitlab/gitlab-runner:latest
+

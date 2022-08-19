@@ -1,0 +1,9 @@
+version: '3.7'
+
+services:
+  broker:
+      volumes:
+          - "./dev_config/mosquitto:/mosquitto"
+  node-red:
+      volumes:
+          - ./dev_config/node-red-data:/data
