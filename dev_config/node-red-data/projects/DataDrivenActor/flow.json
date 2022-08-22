@@ -607,6 +607,53 @@
         ]
     },
     {
+        "id": "1b6dded15d53cb04",
+        "type": "mqtt out",
+        "z": "52bac4d7.a2850c",
+        "name": "",
+        "topic": "",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "d1556403.60a488",
+        "x": 1810,
+        "y": 1560,
+        "wires": []
+    },
+    {
+        "id": "bd5c6c23.20697",
+        "type": "uibuilder",
+        "z": "52bac4d7.a2850c",
+        "name": "VizBlock Controller",
+        "topic": "",
+        "url": "vizblock-controller",
+        "fwdInMessages": false,
+        "allowScripts": false,
+        "allowStyles": false,
+        "copyIndex": true,
+        "templateFolder": "vue",
+        "extTemplate": "",
+        "showfolder": false,
+        "reload": false,
+        "sourceFolder": "src",
+        "deployedVersion": "5.1.1",
+        "x": 700,
+        "y": 1220,
+        "wires": [
+            [
+                "872c61e3.98945",
+                "1b6dded15d53cb04"
+            ],
+            [
+                "31345eb1.ef8a72"
+            ]
+        ]
+    },
+    {
         "id": "67ed5ca0.3cd034",
         "type": "function",
         "z": "52bac4d7.a2850c",
@@ -616,8 +663,8 @@
         "noerr": 0,
         "initialize": "",
         "finalize": "",
-        "x": 300,
-        "y": 540,
+        "x": 310,
+        "y": 1140,
         "wires": [
             [
                 "bd5c6c23.20697",
@@ -635,8 +682,8 @@
         "noerr": 0,
         "initialize": "",
         "finalize": "",
-        "x": 1020,
-        "y": 960,
+        "x": 1030,
+        "y": 1560,
         "wires": [
             []
         ]
@@ -651,8 +698,8 @@
         "noerr": 0,
         "initialize": "",
         "finalize": "",
-        "x": 540,
-        "y": 380,
+        "x": 570,
+        "y": 980,
         "wires": [
             [
                 "3cfcb614.581a2a",
@@ -673,8 +720,8 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 490,
-        "y": 140,
+        "x": 500,
+        "y": 740,
         "wires": []
     },
     {
@@ -698,8 +745,8 @@
         "topic": "",
         "payload": "{\"sad\":\"70\",\"happy\":\"1\",\"clientId\":\"1\"}",
         "payloadType": "json",
-        "x": 130,
-        "y": 260,
+        "x": 140,
+        "y": 860,
         "wires": [
             [
                 "449e70f0.ce074",
@@ -728,8 +775,8 @@
         "topic": "",
         "payload": "{\"sad\":\"10\",\"happy\":\"100\",\"clientId\":\"1\"}",
         "payloadType": "json",
-        "x": 140,
-        "y": 300,
+        "x": 150,
+        "y": 900,
         "wires": [
             [
                 "449e70f0.ce074"
@@ -742,12 +789,41 @@
         "z": "52bac4d7.a2850c",
         "name": "",
         "env": [],
-        "x": 130,
-        "y": 140,
+        "x": 140,
+        "y": 740,
         "wires": [
             [
                 "449e70f0.ce074",
                 "cc33bc7f.50c54"
+            ]
+        ]
+    },
+    {
+        "id": "8b28d4d9.70b528",
+        "type": "uibuilder",
+        "z": "52bac4d7.a2850c",
+        "name": "admin app",
+        "topic": "",
+        "url": "admin",
+        "fwdInMessages": false,
+        "allowScripts": false,
+        "allowStyles": false,
+        "copyIndex": true,
+        "templateFolder": "vue",
+        "extTemplate": "",
+        "showfolder": false,
+        "reload": false,
+        "sourceFolder": "src",
+        "deployedVersion": "5.1.1",
+        "x": 580,
+        "y": 1040,
+        "wires": [
+            [
+                "c1f915d0.a25d68",
+                "e1cb618a.ce3ed"
+            ],
+            [
+                "31345eb1.ef8a72"
             ]
         ]
     },
@@ -772,8 +848,8 @@
         "topic": "",
         "payload": "reset",
         "payloadType": "str",
-        "x": 110,
-        "y": 540,
+        "x": 120,
+        "y": 1140,
         "wires": [
             [
                 "67ed5ca0.3cd034"
@@ -790,8 +866,8 @@
         "noerr": 0,
         "initialize": "",
         "finalize": "",
-        "x": 1010,
-        "y": 280,
+        "x": 1020,
+        "y": 880,
         "wires": [
             [
                 "8b28d4d9.70b528"
@@ -808,8 +884,8 @@
         "noerr": 0,
         "initialize": "",
         "finalize": "",
-        "x": 410,
-        "y": 40,
+        "x": 420,
+        "y": 640,
         "wires": []
     },
     {
@@ -833,8 +909,8 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 170,
-        "y": 40,
+        "x": 180,
+        "y": 640,
         "wires": [
             [
                 "db7c81e1.93c25"
@@ -851,8 +927,8 @@
         "noerr": 0,
         "initialize": "",
         "finalize": "",
-        "x": 690,
-        "y": 540,
+        "x": 700,
+        "y": 1140,
         "wires": [
             [
                 "67ed5ca0.3cd034"
@@ -865,8 +941,8 @@
         "z": "52bac4d7.a2850c",
         "name": "This gets the input from the face tracking app at https://raspberrypi.local/face-tracker/#1 (phone 1)",
         "info": "Note: you must be connected directly to the VizBlocks network in order for the face tracker app to work. You also need to specify a phone id in the url using `#[phone id]`, e.g. `#1` for phone 1.",
-        "x": 380,
-        "y": 100,
+        "x": 390,
+        "y": 700,
         "wires": [],
         "icon": "font-awesome/fa-info-circle"
     },
@@ -876,8 +952,8 @@
         "z": "52bac4d7.a2850c",
         "name": "This lets you manually trigger emotion data as if it were coming from phone 1",
         "info": "",
-        "x": 310,
-        "y": 220,
+        "x": 320,
+        "y": 820,
         "wires": [],
         "icon": "font-awesome/fa-info-circle"
     },
@@ -887,8 +963,8 @@
         "z": "52bac4d7.a2850c",
         "name": "This processes data from the face tracker",
         "info": "",
-        "x": 640,
-        "y": 340,
+        "x": 650,
+        "y": 940,
         "wires": [],
         "icon": "font-awesome/fa-info-circle"
     },
@@ -898,8 +974,8 @@
         "z": "52bac4d7.a2850c",
         "name": "Create admin UI at https://raspberrypi.local:1880/admin/  >>>>",
         "info": "",
-        "x": 270,
-        "y": 440,
+        "x": 280,
+        "y": 1040,
         "wires": [],
         "icon": "node-red/arrow-in.svg"
     },
@@ -909,8 +985,8 @@
         "z": "52bac4d7.a2850c",
         "name": "Create controller UI at https://raspberrypi.local:1880/vizblock-controller/  >>>>",
         "info": "",
-        "x": 310,
-        "y": 620,
+        "x": 320,
+        "y": 1220,
         "wires": [],
         "icon": "node-red/arrow-in.svg"
     },
@@ -920,8 +996,8 @@
         "z": "52bac4d7.a2850c",
         "name": "Send to VizBlocks",
         "info": "",
-        "x": 1830,
-        "y": 860,
+        "x": 1840,
+        "y": 1460,
         "wires": [],
         "icon": "node-red/bridge-dash.svg"
     },
@@ -931,8 +1007,8 @@
         "z": "52bac4d7.a2850c",
         "name": "Click to reset default settings (loaded whenever Pi is restarted)",
         "info": "",
-        "x": 260,
-        "y": 500,
+        "x": 270,
+        "y": 1100,
         "wires": [],
         "icon": "font-awesome/fa-info-circle"
     },
@@ -949,8 +1025,8 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1190,
-        "y": 480,
+        "x": 1200,
+        "y": 1080,
         "wires": []
     },
     {
@@ -966,8 +1042,8 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 470,
-        "y": 260,
+        "x": 480,
+        "y": 860,
         "wires": []
     },
     {
@@ -990,8 +1066,8 @@
         "payloadType": "str",
         "topic": "face1",
         "topicType": "str",
-        "x": 2070,
-        "y": 160,
+        "x": 2080,
+        "y": 760,
         "wires": [
             [
                 "e6174819.4c8868"
@@ -1018,8 +1094,8 @@
         "payloadType": "str",
         "topic": "face1",
         "topicType": "str",
-        "x": 2070,
-        "y": 200,
+        "x": 2080,
+        "y": 800,
         "wires": [
             [
                 "e6174819.4c8868"
@@ -1046,8 +1122,8 @@
         "payloadType": "str",
         "topic": "face1",
         "topicType": "str",
-        "x": 2070,
-        "y": 240,
+        "x": 2080,
+        "y": 840,
         "wires": [
             [
                 "e6174819.4c8868"
@@ -1074,8 +1150,8 @@
         "payloadType": "str",
         "topic": "face1",
         "topicType": "str",
-        "x": 2070,
-        "y": 280,
+        "x": 2080,
+        "y": 880,
         "wires": [
             [
                 "e6174819.4c8868"
@@ -1102,8 +1178,8 @@
         "payloadType": "str",
         "topic": "face1",
         "topicType": "str",
-        "x": 2070,
-        "y": 320,
+        "x": 2080,
+        "y": 920,
         "wires": [
             [
                 "e6174819.4c8868"
@@ -1130,8 +1206,8 @@
         "payloadType": "str",
         "topic": "face1",
         "topicType": "str",
-        "x": 2070,
-        "y": 360,
+        "x": 2080,
+        "y": 960,
         "wires": [
             [
                 "e6174819.4c8868"
@@ -1148,9 +1224,8 @@
         "noerr": 0,
         "initialize": "",
         "finalize": "",
-        "libs": [],
         "x": 2340,
-        "y": 360,
+        "y": 940,
         "wires": [
             [
                 "d611b1ef.d9cfb",
@@ -1171,8 +1246,8 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 2350,
-        "y": 160,
+        "x": 2360,
+        "y": 760,
         "wires": []
     },
     {
@@ -1181,8 +1256,8 @@
         "z": "52bac4d7.a2850c",
         "name": "https://raspberrypi.local:1880/ui/",
         "info": "",
-        "x": 2130,
-        "y": 120,
+        "x": 2140,
+        "y": 720,
         "wires": []
     },
     {
@@ -1204,8 +1279,8 @@
         "max": "180",
         "step": 1,
         "className": "",
-        "x": 2870,
-        "y": 260,
+        "x": 2880,
+        "y": 860,
         "wires": [
             [
                 "cb716f51.65a29"
@@ -1231,8 +1306,8 @@
         "max": "180",
         "step": 1,
         "className": "",
-        "x": 2880,
-        "y": 360,
+        "x": 2890,
+        "y": 960,
         "wires": [
             [
                 "cb716f51.65a29"
@@ -1252,8 +1327,8 @@
         "format": "{{msg.payload}}",
         "layout": "row-spread",
         "className": "",
-        "x": 2910,
-        "y": 220,
+        "x": 2920,
+        "y": 820,
         "wires": []
     },
     {
@@ -1269,8 +1344,8 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 3790,
-        "y": 580,
+        "x": 3800,
+        "y": 1180,
         "wires": []
     },
     {
@@ -1283,8 +1358,8 @@
         "noerr": 0,
         "initialize": "",
         "finalize": "",
-        "x": 3370,
-        "y": 700,
+        "x": 3380,
+        "y": 1300,
         "wires": [
             [
                 "57c71e36.9fe28"
@@ -1304,8 +1379,8 @@
         "format": "{{msg.payload}}",
         "layout": "row-spread",
         "className": "",
-        "x": 2950,
-        "y": 600,
+        "x": 2960,
+        "y": 1200,
         "wires": []
     },
     {
@@ -1368,8 +1443,8 @@
         "topic": "r_eye_colour",
         "topicType": "str",
         "className": "",
-        "x": 2870,
-        "y": 640,
+        "x": 2880,
+        "y": 1240,
         "wires": [
             [
                 "cb716f51.65a29"
@@ -1395,8 +1470,8 @@
         "max": "12",
         "step": 1,
         "className": "",
-        "x": 2860,
-        "y": 680,
+        "x": 2870,
+        "y": 1280,
         "wires": [
             [
                 "cb716f51.65a29"
@@ -1421,8 +1496,8 @@
         "sendOnBlur": true,
         "className": "",
         "topicType": "str",
-        "x": 2860,
-        "y": 180,
+        "x": 2870,
+        "y": 780,
         "wires": [
             [
                 "cb716f51.65a29"
@@ -1439,8 +1514,8 @@
         "noerr": 0,
         "initialize": "",
         "finalize": "",
-        "x": 1920,
-        "y": 160,
+        "x": 1930,
+        "y": 760,
         "wires": [
             [
                 "42218f3a.85d4e8"
@@ -1453,8 +1528,8 @@
         "z": "52bac4d7.a2850c",
         "name": "",
         "events": "all",
-        "x": 1460,
-        "y": 280,
+        "x": 1470,
+        "y": 880,
         "wires": [
             [
                 "52ebb5dd.1028e4",
@@ -1480,8 +1555,8 @@
         "noerr": 0,
         "initialize": "",
         "finalize": "",
-        "x": 1920,
-        "y": 200,
+        "x": 1930,
+        "y": 800,
         "wires": [
             [
                 "2dcf29c.fbef1d6"
@@ -1498,8 +1573,8 @@
         "noerr": 0,
         "initialize": "",
         "finalize": "",
-        "x": 1920,
-        "y": 240,
+        "x": 1930,
+        "y": 840,
         "wires": [
             [
                 "dd4b592.498db28"
@@ -1516,8 +1591,8 @@
         "noerr": 0,
         "initialize": "",
         "finalize": "",
-        "x": 1920,
-        "y": 280,
+        "x": 1930,
+        "y": 880,
         "wires": [
             [
                 "222c839b.ad8054"
@@ -1534,8 +1609,8 @@
         "noerr": 0,
         "initialize": "",
         "finalize": "",
-        "x": 1920,
-        "y": 320,
+        "x": 1930,
+        "y": 920,
         "wires": [
             [
                 "230a643e.ea72fc"
@@ -1555,8 +1630,8 @@
         "format": "{{msg.payload}}",
         "layout": "row-spread",
         "className": "",
-        "x": 2940,
-        "y": 440,
+        "x": 2950,
+        "y": 1040,
         "wires": []
     },
     {
@@ -1619,8 +1694,8 @@
         "topic": "l_eye_colour",
         "topicType": "str",
         "className": "",
-        "x": 2860,
-        "y": 480,
+        "x": 2870,
+        "y": 1080,
         "wires": [
             [
                 "cb716f51.65a29"
@@ -1646,8 +1721,8 @@
         "max": "12",
         "step": 1,
         "className": "",
-        "x": 2860,
-        "y": 520,
+        "x": 2870,
+        "y": 1120,
         "wires": [
             [
                 "cb716f51.65a29"
@@ -1667,8 +1742,8 @@
         "format": "{{msg.payload}}",
         "layout": "row-spread",
         "className": "",
-        "x": 2900,
-        "y": 780,
+        "x": 2910,
+        "y": 1380,
         "wires": []
     },
     {
@@ -1690,8 +1765,8 @@
         "max": "180",
         "step": 1,
         "className": "",
-        "x": 2850,
-        "y": 820,
+        "x": 2860,
+        "y": 1420,
         "wires": [
             [
                 "cb716f51.65a29"
@@ -1704,8 +1779,8 @@
         "z": "52bac4d7.a2850c",
         "name": "",
         "events": "all",
-        "x": 2580,
-        "y": 100,
+        "x": 2590,
+        "y": 700,
         "wires": [
             [
                 "81082733.2956f8"
@@ -1757,8 +1832,8 @@
         "topic": "face1_currentEmotion",
         "topicType": "str",
         "className": "",
-        "x": 2950,
-        "y": 100,
+        "x": 2960,
+        "y": 700,
         "wires": [
             [
                 "89802df7.1e3938",
@@ -1776,8 +1851,8 @@
         "noerr": 0,
         "initialize": "",
         "finalize": "",
-        "x": 2600,
-        "y": 420,
+        "x": 2610,
+        "y": 1020,
         "wires": [
             [
                 "2199d7cb.e4a51"
@@ -1825,8 +1900,8 @@
         "noerr": 0,
         "initialize": "",
         "finalize": "",
-        "x": 2750,
-        "y": 100,
+        "x": 2760,
+        "y": 700,
         "wires": [
             [
                 "fbd8f533.210b5"
@@ -1839,8 +1914,8 @@
         "z": "52bac4d7.a2850c",
         "name": "Dynamic Menu for editing Emotions",
         "info": "",
-        "x": 2660,
-        "y": 60,
+        "x": 2670,
+        "y": 660,
         "wires": []
     },
     {
@@ -1853,8 +1928,8 @@
         "noerr": 0,
         "initialize": "",
         "finalize": "",
-        "x": 3820,
-        "y": 240,
+        "x": 3830,
+        "y": 840,
         "wires": [
             [
                 "57c71e36.9fe28"
@@ -1871,8 +1946,8 @@
         "noerr": 0,
         "initialize": "",
         "finalize": "",
-        "x": 3250,
-        "y": 120,
+        "x": 3260,
+        "y": 720,
         "wires": [
             [
                 "e6a8576e.dda7b8"
@@ -1938,8 +2013,8 @@
         "topic": "l_eyebrow_command",
         "topicType": "str",
         "className": "",
-        "x": 3550,
-        "y": 60,
+        "x": 3560,
+        "y": 660,
         "wires": [
             [
                 "4edb6966.44714"
@@ -1986,8 +2061,8 @@
         "topic": "r_eyebrow_command",
         "topicType": "str",
         "className": "",
-        "x": 3550,
-        "y": 100,
+        "x": 3560,
+        "y": 700,
         "wires": [
             [
                 "4edb6966.44714"
@@ -2034,8 +2109,8 @@
         "topic": "mouth_command",
         "topicType": "str",
         "className": "",
-        "x": 3530,
-        "y": 320,
+        "x": 3540,
+        "y": 920,
         "wires": [
             [
                 "4edb6966.44714"
@@ -2082,8 +2157,8 @@
         "topic": "l_eye_command",
         "topicType": "str",
         "className": "",
-        "x": 3530,
-        "y": 140,
+        "x": 3540,
+        "y": 740,
         "wires": [
             [
                 "4edb6966.44714"
@@ -2130,8 +2205,8 @@
         "topic": "r_eye_command",
         "topicType": "str",
         "className": "",
-        "x": 3540,
-        "y": 220,
+        "x": 3550,
+        "y": 820,
         "wires": [
             [
                 "4edb6966.44714"
@@ -2158,8 +2233,8 @@
         "max": "200",
         "step": "10",
         "className": "",
-        "x": 3520,
-        "y": 180,
+        "x": 3530,
+        "y": 780,
         "wires": [
             [
                 "4edb6966.44714"
@@ -2186,8 +2261,8 @@
         "max": "200",
         "step": "10",
         "className": "",
-        "x": 3530,
-        "y": 260,
+        "x": 3540,
+        "y": 860,
         "wires": [
             [
                 "4edb6966.44714"
@@ -2212,8 +2287,8 @@
         "sendOnBlur": true,
         "className": "",
         "topicType": "str",
-        "x": 3320,
-        "y": 840,
+        "x": 3330,
+        "y": 1440,
         "wires": [
             [
                 "47f2b36d.fb58c4"
@@ -2265,8 +2340,8 @@
         "topic": "face1_reaction1",
         "topicType": "str",
         "className": "",
-        "x": 3340,
-        "y": 880,
+        "x": 3350,
+        "y": 1480,
         "wires": [
             [
                 "47f2b36d.fb58c4"
@@ -2318,8 +2393,8 @@
         "topic": "face1_reaction2",
         "topicType": "str",
         "className": "",
-        "x": 3340,
-        "y": 1000,
+        "x": 3350,
+        "y": 1600,
         "wires": [
             [
                 "47f2b36d.fb58c4"
@@ -2336,8 +2411,8 @@
         "noerr": 0,
         "initialize": "",
         "finalize": "",
-        "x": 3660,
-        "y": 1020,
+        "x": 3670,
+        "y": 1620,
         "wires": [
             [
                 "57c71e36.9fe28",
@@ -2366,8 +2441,8 @@
         "payloadType": "str",
         "topic": "answer1",
         "topicType": "str",
-        "x": 3930,
-        "y": 660,
+        "x": 3940,
+        "y": 1260,
         "wires": [
             [
                 "44920056.56b72"
@@ -2394,8 +2469,8 @@
         "payloadType": "str",
         "topic": "answer2",
         "topicType": "str",
-        "x": 3930,
-        "y": 700,
+        "x": 3940,
+        "y": 1300,
         "wires": [
             [
                 "44920056.56b72"
@@ -2407,13 +2482,13 @@
         "type": "function",
         "z": "52bac4d7.a2850c",
         "name": "Voting UI Handler",
-        "func": "let votingIsLive1 = flow.get('face1_votingIsLive');\nlet votingIsLive2 = flow.get('face2_votingIsLive');\nlet message = msg.payload.something;\nnode.warn('the message coming in is ' + message);\nif (votingIsLive1 === true) {\n    var count = flow.get('face1_' + message + '_count');\n    count = count + 1;\n    flow.set('face1_' + message + '_count', count);\n} \n\nif (votingIsLive2 === true) {\n    var count2 = flow.get('face2_' + message + '_count') || 0;\n    count2 = count2 + 1;\n    flow.set('face2_' + message + '_count', count2);\n} \nreturn {topic: 'face1_vote', payload: 'count ' + count + ' ' + message + ' voting ' + votingIsLive1}\n\n",
+        "func": "let votingIsLive1 = flow.get('face1_votingIsLive');\nlet votingIsLive2 = flow.get('face2_votingIsLive');\nlet message = msg.payload.something;\nnode.warn('the message coming in is ' + message);\nif (votingIsLive1 === true) {\n    node.warn('the message part of this is: ' + message)\n    var count = flow.get('face1_' + message + '_count') || 0;\n    count = count + 1;\n    flow.set('face1_' + message + '_count', count);\n} \n\nif (votingIsLive2 === true) {\n    var count2 = flow.get('face2_' + message + '_count') || 0;\n    count2 = count2 + 1;\n    flow.set('face2_' + message + '_count', count2);\n} \nreturn {topic: 'face1_vote', payload: 'count ' + count + ' ' + message + ' voting ' + votingIsLive1}\n\n",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
-        "x": 4150,
-        "y": 680,
+        "x": 4160,
+        "y": 1280,
         "wires": [
             [
                 "57c71e36.9fe28"
@@ -2446,8 +2521,8 @@
         "offcolor": "",
         "animate": false,
         "className": "",
-        "x": 3310,
-        "y": 1060,
+        "x": 3320,
+        "y": 1660,
         "wires": [
             [
                 "47f2b36d.fb58c4"
@@ -2459,13 +2534,13 @@
         "type": "function",
         "z": "52bac4d7.a2850c",
         "name": "Calculate Poll Emotion ",
-        "func": "let ans1 = flow.get('face1_answer1_count');\nlet ans2 = flow.get('face1_answer2_count');\nlet threshold = flow.get('face1_poll_threshold') || 50;\n\nlet result = Math.round((ans1 / (ans1 + ans2) * 100));\nnode.warn('the result is: ', result)\n\nif (result >= threshold) {\n    let react1 = flow.get('face1_reaction1')\n    node.warn([\"face1_reaction 1\", react1])\n    return {topic: react1, payload: react1}\n}\nelse {\n    let react2 = flow.get('face1_reaction2')\n    node.warn([\"face1_reaction 2\", react2])\n    return {topic: react2, payload: react2}\n}",
+        "func": "let ans1 = flow.get('face1_answer1_count');\nlet ans2 = flow.get('face1_answer2_count');\nlet threshold = flow.get('face1_poll_threshold') || 50;\n\nlet result = Math.round((ans1 / (ans1 + ans2) * 100));\nnode.warn('the result is: ', result)\n\nif (result >= threshold) {\n    let react1 = flow.get('face1_reaction1')\n    node.warn([\"face1_emotion 1 \" + react1])\n    return {topic: react1, payload: react1}\n}\nelse {\n    let react2 = flow.get('face1_reaction2')\n    node.warn([\"face1_emotion 2 \" + react2])\n    return {topic: react2, payload: react2}\n}",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
-        "x": 4000,
-        "y": 1160,
+        "x": 4010,
+        "y": 1760,
         "wires": [
             [
                 "57c71e36.9fe28",
@@ -2495,12 +2570,63 @@
         "topic": "go",
         "payload": "go",
         "payloadType": "str",
-        "x": 3750,
-        "y": 1120,
+        "x": 3760,
+        "y": 1720,
         "wires": [
             [
                 "84e5a4c2.baba28"
             ]
+        ]
+    },
+    {
+        "id": "4933f768.9f3008",
+        "type": "uibuilder",
+        "z": "52bac4d7.a2850c",
+        "name": "Polling",
+        "topic": "",
+        "url": "polling",
+        "fwdInMessages": false,
+        "allowScripts": false,
+        "allowStyles": false,
+        "copyIndex": true,
+        "templateFolder": "vue",
+        "extTemplate": "",
+        "showfolder": false,
+        "reload": false,
+        "sourceFolder": "src",
+        "deployedVersion": "5.1.1",
+        "x": 3520,
+        "y": 1180,
+        "wires": [
+            [
+                "57c71e36.9fe28",
+                "44920056.56b72"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "f4b788c1.05b0d",
+        "type": "uibuilder",
+        "z": "52bac4d7.a2850c",
+        "name": "",
+        "topic": "",
+        "url": "testUI",
+        "fwdInMessages": false,
+        "allowScripts": false,
+        "allowStyles": false,
+        "copyIndex": true,
+        "templateFolder": "vue",
+        "extTemplate": "",
+        "showfolder": false,
+        "reload": false,
+        "sourceFolder": "src",
+        "deployedVersion": "5.1.1",
+        "x": 4190,
+        "y": 1080,
+        "wires": [
+            [],
+            []
         ]
     },
     {
@@ -2523,8 +2649,8 @@
         "payloadType": "str",
         "topic": "face1_resetPoll",
         "topicType": "str",
-        "x": 3330,
-        "y": 1120,
+        "x": 3340,
+        "y": 1720,
         "wires": [
             [
                 "47f2b36d.fb58c4"
@@ -2551,8 +2677,8 @@
         "payloadType": "str",
         "topic": "topic",
         "topicType": "msg",
-        "x": 3320,
-        "y": 1160,
+        "x": 3330,
+        "y": 1760,
         "wires": [
             [
                 "84e5a4c2.baba28",
@@ -2580,8 +2706,8 @@
         "payloadType": "str",
         "topic": "",
         "topicType": "str",
-        "x": 3930,
-        "y": 1500,
+        "x": 3940,
+        "y": 2100,
         "wires": [
             [
                 "62583e1b.dfccb"
@@ -2603,8 +2729,8 @@
         "resendOnRefresh": false,
         "templateScope": "local",
         "className": "",
-        "x": 4300,
-        "y": 1520,
+        "x": 4310,
+        "y": 2120,
         "wires": [
             []
         ]
@@ -2629,8 +2755,8 @@
         "payloadType": "str",
         "topic": "",
         "topicType": "str",
-        "x": 3940,
-        "y": 1540,
+        "x": 3950,
+        "y": 2140,
         "wires": [
             [
                 "62583e1b.dfccb"
@@ -2654,8 +2780,8 @@
         "bytopic": "all",
         "topic": "topic",
         "outputs": 1,
-        "x": 4120,
-        "y": 1520,
+        "x": 4130,
+        "y": 2120,
         "wires": [
             [
                 "367537c6.6ec97"
@@ -2685,8 +2811,8 @@
         "seg1": "",
         "seg2": "",
         "className": "",
-        "x": 4210,
-        "y": 1020,
+        "x": 4220,
+        "y": 1620,
         "wires": []
     },
     {
@@ -2715,8 +2841,8 @@
         "offcolor": "",
         "animate": false,
         "className": "",
-        "x": 3350,
-        "y": 1220,
+        "x": 3360,
+        "y": 1820,
         "wires": [
             [
                 "47f2b36d.fb58c4"
@@ -2733,8 +2859,8 @@
         "noerr": 0,
         "initialize": "",
         "finalize": "",
-        "x": 3980,
-        "y": 1020,
+        "x": 3990,
+        "y": 1620,
         "wires": [
             [
                 "7f83fb13.3d1444"
@@ -2751,10 +2877,12 @@
         "noerr": 0,
         "initialize": "",
         "finalize": "",
-        "x": 3930,
-        "y": 480,
+        "x": 3940,
+        "y": 1080,
         "wires": [
-            []
+            [
+                "f4b788c1.05b0d"
+            ]
         ]
     },
     {
@@ -2778,8 +2906,8 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 3740,
-        "y": 480,
+        "x": 3750,
+        "y": 1080,
         "wires": [
             [
                 "35c102c9.7fdfc6"
@@ -2799,8 +2927,8 @@
         "format": "{{msg.payload}}",
         "layout": "row-left",
         "className": "",
-        "x": 4190,
-        "y": 920,
+        "x": 4220,
+        "y": 1440,
         "wires": []
     },
     {
@@ -2822,8 +2950,8 @@
         "max": "99",
         "step": 1,
         "className": "",
-        "x": 3320,
-        "y": 940,
+        "x": 3330,
+        "y": 1540,
         "wires": [
             [
                 "47f2b36d.fb58c4"
@@ -2860,8 +2988,8 @@
         "topic": "face1_datasource",
         "topicType": "str",
         "className": "",
-        "x": 4530,
-        "y": 580,
+        "x": 4540,
+        "y": 1180,
         "wires": [
             [
                 "f1399d5d.ff63f8"
@@ -2898,8 +3026,8 @@
         "topic": "face1_processing",
         "topicType": "str",
         "className": "",
-        "x": 4530,
-        "y": 620,
+        "x": 4540,
+        "y": 1220,
         "wires": [
             [
                 "f1399d5d.ff63f8"
@@ -2926,8 +3054,8 @@
         "max": "16",
         "step": 1,
         "className": "",
-        "x": 4540,
-        "y": 660,
+        "x": 4550,
+        "y": 1260,
         "wires": [
             [
                 "f1399d5d.ff63f8"
@@ -2964,8 +3092,8 @@
         "topic": "face2_datasource",
         "topicType": "str",
         "className": "",
-        "x": 4530,
-        "y": 740,
+        "x": 4540,
+        "y": 1340,
         "wires": [
             [
                 "f1399d5d.ff63f8"
@@ -3002,8 +3130,8 @@
         "topic": "face2_processing",
         "topicType": "str",
         "className": "",
-        "x": 4530,
-        "y": 780,
+        "x": 4540,
+        "y": 1380,
         "wires": [
             [
                 "f1399d5d.ff63f8"
@@ -3030,8 +3158,8 @@
         "max": "16",
         "step": 1,
         "className": "",
-        "x": 4540,
-        "y": 820,
+        "x": 4550,
+        "y": 1420,
         "wires": [
             [
                 "f1399d5d.ff63f8"
@@ -3048,8 +3176,8 @@
         "noerr": 0,
         "initialize": "",
         "finalize": "",
-        "x": 4800,
-        "y": 700,
+        "x": 4810,
+        "y": 1300,
         "wires": [
             [
                 "e1cb618a.ce3ed",
@@ -3070,8 +3198,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 4830,
-        "y": 1000,
+        "x": 4840,
+        "y": 1600,
         "wires": []
     },
     {
@@ -3084,8 +3212,8 @@
         "noerr": 0,
         "initialize": "",
         "finalize": "",
-        "x": 2220,
-        "y": 480,
+        "x": 2230,
+        "y": 1080,
         "wires": [
             []
         ]
@@ -3110,8 +3238,8 @@
         "payloadType": "str",
         "topic": "face2",
         "topicType": "str",
-        "x": 1910,
-        "y": 420,
+        "x": 1920,
+        "y": 1020,
         "wires": [
             [
                 "e6174819.4c8868"
@@ -3138,8 +3266,8 @@
         "payloadType": "str",
         "topic": "face2",
         "topicType": "str",
-        "x": 1910,
-        "y": 460,
+        "x": 1920,
+        "y": 1060,
         "wires": [
             [
                 "e6174819.4c8868"
@@ -3166,8 +3294,8 @@
         "payloadType": "str",
         "topic": "face2",
         "topicType": "str",
-        "x": 1910,
-        "y": 500,
+        "x": 1920,
+        "y": 1100,
         "wires": [
             [
                 "e6174819.4c8868"
@@ -3194,8 +3322,8 @@
         "payloadType": "str",
         "topic": "face2",
         "topicType": "str",
-        "x": 1910,
-        "y": 540,
+        "x": 1920,
+        "y": 1140,
         "wires": [
             [
                 "e6174819.4c8868"
@@ -3222,8 +3350,8 @@
         "payloadType": "str",
         "topic": "face2",
         "topicType": "str",
-        "x": 1910,
-        "y": 580,
+        "x": 1920,
+        "y": 1180,
         "wires": [
             [
                 "e6174819.4c8868"
@@ -3250,8 +3378,8 @@
         "payloadType": "str",
         "topic": "face2",
         "topicType": "str",
-        "x": 1910,
-        "y": 620,
+        "x": 1920,
+        "y": 1220,
         "wires": [
             [
                 "e6174819.4c8868"
@@ -3268,8 +3396,8 @@
         "noerr": 0,
         "initialize": "",
         "finalize": "",
-        "x": 1720,
-        "y": 580,
+        "x": 1730,
+        "y": 1180,
         "wires": [
             [
                 "609ff4e7.43b2cc"
@@ -3286,8 +3414,8 @@
         "noerr": 0,
         "initialize": "",
         "finalize": "",
-        "x": 1720,
-        "y": 540,
+        "x": 1730,
+        "y": 1140,
         "wires": [
             [
                 "6a0ed347.1a0d64"
@@ -3304,8 +3432,8 @@
         "noerr": 0,
         "initialize": "",
         "finalize": "",
-        "x": 1720,
-        "y": 500,
+        "x": 1730,
+        "y": 1100,
         "wires": [
             [
                 "31a8f18f.a3765e"
@@ -3322,8 +3450,8 @@
         "noerr": 0,
         "initialize": "",
         "finalize": "",
-        "x": 1720,
-        "y": 460,
+        "x": 1730,
+        "y": 1060,
         "wires": [
             [
                 "2694078d.bd22c8"
@@ -3340,8 +3468,8 @@
         "noerr": 0,
         "initialize": "",
         "finalize": "",
-        "x": 1720,
-        "y": 420,
+        "x": 1730,
+        "y": 1020,
         "wires": [
             [
                 "8665d7ec.807f7"
@@ -3366,8 +3494,8 @@
         "sendOnBlur": true,
         "className": "",
         "topicType": "str",
-        "x": 2740,
-        "y": 1000,
+        "x": 2750,
+        "y": 1600,
         "wires": [
             [
                 "7d604614.6ad2d8"
@@ -3387,8 +3515,8 @@
         "format": "{{msg.payload}}",
         "layout": "row-spread",
         "className": "",
-        "x": 2790,
-        "y": 1040,
+        "x": 2800,
+        "y": 1640,
         "wires": []
     },
     {
@@ -3410,8 +3538,8 @@
         "max": "180",
         "step": 1,
         "className": "",
-        "x": 2750,
-        "y": 1080,
+        "x": 2760,
+        "y": 1680,
         "wires": [
             [
                 "7d604614.6ad2d8"
@@ -3437,8 +3565,8 @@
         "max": "180",
         "step": 1,
         "className": "",
-        "x": 2760,
-        "y": 1180,
+        "x": 2770,
+        "y": 1780,
         "wires": [
             [
                 "7d604614.6ad2d8"
@@ -3458,8 +3586,8 @@
         "format": "{{msg.payload}}",
         "layout": "row-spread",
         "className": "",
-        "x": 2820,
-        "y": 1260,
+        "x": 2830,
+        "y": 1860,
         "wires": []
     },
     {
@@ -3522,8 +3650,8 @@
         "topic": "l_eye_colour",
         "topicType": "str",
         "className": "",
-        "x": 2740,
-        "y": 1300,
+        "x": 2750,
+        "y": 1900,
         "wires": [
             [
                 "7d604614.6ad2d8"
@@ -3549,8 +3677,8 @@
         "max": "12",
         "step": 1,
         "className": "",
-        "x": 2740,
-        "y": 1340,
+        "x": 2750,
+        "y": 1940,
         "wires": [
             [
                 "7d604614.6ad2d8"
@@ -3570,8 +3698,8 @@
         "format": "{{msg.payload}}",
         "layout": "row-spread",
         "className": "",
-        "x": 2830,
-        "y": 1420,
+        "x": 2840,
+        "y": 2020,
         "wires": []
     },
     {
@@ -3634,8 +3762,8 @@
         "topic": "r_eye_colour",
         "topicType": "str",
         "className": "",
-        "x": 2750,
-        "y": 1460,
+        "x": 2760,
+        "y": 2060,
         "wires": [
             [
                 "7d604614.6ad2d8"
@@ -3661,8 +3789,8 @@
         "max": "12",
         "step": 1,
         "className": "",
-        "x": 2740,
-        "y": 1500,
+        "x": 2750,
+        "y": 2100,
         "wires": [
             [
                 "7d604614.6ad2d8"
@@ -3682,8 +3810,8 @@
         "format": "{{msg.payload}}",
         "layout": "row-spread",
         "className": "",
-        "x": 2780,
-        "y": 1600,
+        "x": 2790,
+        "y": 2200,
         "wires": []
     },
     {
@@ -3705,8 +3833,8 @@
         "max": "180",
         "step": 1,
         "className": "",
-        "x": 2730,
-        "y": 1640,
+        "x": 2740,
+        "y": 2240,
         "wires": [
             [
                 "7d604614.6ad2d8"
@@ -3723,8 +3851,8 @@
         "noerr": 0,
         "initialize": "",
         "finalize": "",
-        "x": 2480,
-        "y": 1240,
+        "x": 2490,
+        "y": 1840,
         "wires": [
             [
                 "a449e46a.59407"
@@ -3772,8 +3900,8 @@
         "noerr": 0,
         "initialize": "",
         "finalize": "",
-        "x": 3130,
-        "y": 1320,
+        "x": 3140,
+        "y": 1920,
         "wires": [
             [
                 "134eea44.ec0426"
@@ -3790,8 +3918,8 @@
         "noerr": 0,
         "initialize": "",
         "finalize": "",
-        "x": 2610,
-        "y": 1780,
+        "x": 2620,
+        "y": 2380,
         "wires": [
             [
                 "4df72777.a67ae"
@@ -3804,8 +3932,8 @@
         "z": "52bac4d7.a2850c",
         "name": "",
         "events": "all",
-        "x": 2440,
-        "y": 1780,
+        "x": 2450,
+        "y": 2380,
         "wires": [
             [
                 "eb2671fc.1b3088"
@@ -3818,8 +3946,8 @@
         "z": "52bac4d7.a2850c",
         "name": "Dynamic Menu for editing Emotions FAce 2",
         "info": "",
-        "x": 2550,
-        "y": 1740,
+        "x": 2560,
+        "y": 2340,
         "wires": []
     },
     {
@@ -3867,8 +3995,8 @@
         "topic": "face2_currentEmotion",
         "topicType": "str",
         "className": "",
-        "x": 2810,
-        "y": 1780,
+        "x": 2820,
+        "y": 2380,
         "wires": [
             [
                 "2f7bc501.7f55c2",
@@ -3886,8 +4014,8 @@
         "noerr": 0,
         "initialize": "",
         "finalize": "",
-        "x": 3110,
-        "y": 1800,
+        "x": 3120,
+        "y": 2400,
         "wires": [
             [
                 "8462efb9.6edf18"
@@ -3953,8 +4081,8 @@
         "topic": "l_eyebrow_command",
         "topicType": "str",
         "className": "",
-        "x": 3410,
-        "y": 1740,
+        "x": 3420,
+        "y": 2340,
         "wires": [
             [
                 "240f16f.f6ce16a"
@@ -4001,8 +4129,8 @@
         "topic": "r_eyebrow_command",
         "topicType": "str",
         "className": "",
-        "x": 3410,
-        "y": 1780,
+        "x": 3420,
+        "y": 2380,
         "wires": [
             [
                 "240f16f.f6ce16a"
@@ -4049,8 +4177,8 @@
         "topic": "l_eye_command",
         "topicType": "str",
         "className": "",
-        "x": 3390,
-        "y": 1820,
+        "x": 3400,
+        "y": 2420,
         "wires": [
             [
                 "240f16f.f6ce16a"
@@ -4077,8 +4205,8 @@
         "max": "200",
         "step": "10",
         "className": "",
-        "x": 3380,
-        "y": 1860,
+        "x": 3390,
+        "y": 2460,
         "wires": [
             [
                 "240f16f.f6ce16a"
@@ -4125,8 +4253,8 @@
         "topic": "r_eye_command",
         "topicType": "str",
         "className": "",
-        "x": 3400,
-        "y": 1900,
+        "x": 3410,
+        "y": 2500,
         "wires": [
             [
                 "240f16f.f6ce16a"
@@ -4153,8 +4281,8 @@
         "max": "200",
         "step": "10",
         "className": "",
-        "x": 3390,
-        "y": 1940,
+        "x": 3400,
+        "y": 2540,
         "wires": [
             [
                 "240f16f.f6ce16a"
@@ -4201,8 +4329,8 @@
         "topic": "mouth_command",
         "topicType": "str",
         "className": "",
-        "x": 3390,
-        "y": 2000,
+        "x": 3400,
+        "y": 2600,
         "wires": [
             [
                 "240f16f.f6ce16a"
@@ -4219,8 +4347,8 @@
         "noerr": 0,
         "initialize": "",
         "finalize": "",
-        "x": 3680,
-        "y": 1920,
+        "x": 3690,
+        "y": 2520,
         "wires": [
             [
                 "134eea44.ec0426"
@@ -4239,8 +4367,8 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 3460,
-        "y": 1400,
+        "x": 3470,
+        "y": 2000,
         "wires": []
     },
     {
@@ -4261,8 +4389,8 @@
         "sendOnBlur": true,
         "className": "",
         "topicType": "str",
-        "x": 4000,
-        "y": 1620,
+        "x": 4010,
+        "y": 2220,
         "wires": [
             [
                 "c1f6494f.a0901"
@@ -4311,11 +4439,11 @@
             }
         ],
         "payload": "",
-        "topic": "face1_reaction1",
+        "topic": "face2_reaction1",
         "topicType": "str",
         "className": "",
-        "x": 4020,
-        "y": 1660,
+        "x": 4030,
+        "y": 2260,
         "wires": [
             [
                 "c1f6494f.a0901"
@@ -4341,8 +4469,8 @@
         "max": "99",
         "step": 1,
         "className": "",
-        "x": 4000,
-        "y": 1720,
+        "x": 4010,
+        "y": 2320,
         "wires": [
             [
                 "c1f6494f.a0901"
@@ -4391,11 +4519,11 @@
             }
         ],
         "payload": "",
-        "topic": "face1_reaction2",
+        "topic": "face2_reaction2",
         "topicType": "str",
         "className": "",
-        "x": 4020,
-        "y": 1780,
+        "x": 4030,
+        "y": 2380,
         "wires": [
             [
                 "c1f6494f.a0901"
@@ -4428,8 +4556,8 @@
         "offcolor": "",
         "animate": false,
         "className": "",
-        "x": 3990,
-        "y": 1840,
+        "x": 4000,
+        "y": 2440,
         "wires": [
             [
                 "c1f6494f.a0901"
@@ -4456,8 +4584,8 @@
         "payloadType": "str",
         "topic": "face2_resetPoll",
         "topicType": "str",
-        "x": 4010,
-        "y": 1900,
+        "x": 4020,
+        "y": 2500,
         "wires": [
             [
                 "c1f6494f.a0901"
@@ -4484,8 +4612,8 @@
         "payloadType": "str",
         "topic": "topic",
         "topicType": "msg",
-        "x": 4000,
-        "y": 1940,
+        "x": 4010,
+        "y": 2540,
         "wires": [
             [
                 "16f55a3a.8b061e",
@@ -4519,8 +4647,8 @@
         "offcolor": "",
         "animate": false,
         "className": "",
-        "x": 4030,
-        "y": 2000,
+        "x": 4040,
+        "y": 2600,
         "wires": [
             [
                 "c1f6494f.a0901"
@@ -4537,8 +4665,8 @@
         "noerr": 0,
         "initialize": "",
         "finalize": "",
-        "x": 4340,
-        "y": 1800,
+        "x": 4350,
+        "y": 2400,
         "wires": [
             [
                 "b068871a.f1e758"
@@ -4550,13 +4678,13 @@
         "type": "function",
         "z": "52bac4d7.a2850c",
         "name": "Calculate Guage Value",
-        "func": "let ans1 = flow.get('face2_answer1_count');\nlet ans2 = flow.get('face2_answer2_count');\nlet result = Math.round((ans1 / (ans1 + ans2) * 100));\nreturn {topic: 'result', payload: result}",
+        "func": "let ans1 = flow.get('face2_answer1_count');\nlet ans2 = flow.get('face2_answer2_count');\nlet result = Math.round((ans1 / (ans1 + ans2) * 100));\nnode.warn('face 2 worked out as' + result)\nreturn {topic: 'result', payload: result}",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
-        "x": 4660,
-        "y": 1800,
+        "x": 4670,
+        "y": 2400,
         "wires": [
             [
                 "d8eae57a.e1a5e8"
@@ -4573,8 +4701,8 @@
         "noerr": 0,
         "initialize": "",
         "finalize": "",
-        "x": 4680,
-        "y": 1940,
+        "x": 4690,
+        "y": 2540,
         "wires": [
             [
                 "a0606a67.24d738",
@@ -4605,8 +4733,8 @@
         "seg1": "",
         "seg2": "",
         "className": "",
-        "x": 4890,
-        "y": 1800,
+        "x": 4900,
+        "y": 2400,
         "wires": []
     },
     {
@@ -4622,112 +4750,9 @@
         "format": "{{msg.payload}}",
         "layout": "row-left",
         "className": "",
-        "x": 4870,
-        "y": 1700,
+        "x": 4880,
+        "y": 2300,
         "wires": []
-    },
-    {
-        "id": "1b6dded15d53cb04",
-        "type": "mqtt out",
-        "z": "52bac4d7.a2850c",
-        "name": "",
-        "topic": "",
-        "qos": "",
-        "retain": "",
-        "respTopic": "",
-        "contentType": "",
-        "userProps": "",
-        "correl": "",
-        "expiry": "",
-        "broker": "d1556403.60a488",
-        "x": 1870,
-        "y": 960,
-        "wires": []
-    },
-    {
-        "id": "bd5c6c23.20697",
-        "type": "uibuilder",
-        "z": "52bac4d7.a2850c",
-        "name": "VizBlock Controller",
-        "topic": "",
-        "url": "vizblock-controller",
-        "fwdInMessages": false,
-        "allowScripts": false,
-        "allowStyles": false,
-        "copyIndex": true,
-        "templateFolder": "vue",
-        "extTemplate": "",
-        "showfolder": false,
-        "reload": false,
-        "sourceFolder": "src",
-        "deployedVersion": "5.1.1",
-        "x": 690,
-        "y": 620,
-        "wires": [
-            [
-                "872c61e3.98945",
-                "1b6dded15d53cb04"
-            ],
-            [
-                "31345eb1.ef8a72"
-            ]
-        ]
-    },
-    {
-        "id": "8b28d4d9.70b528",
-        "type": "uibuilder",
-        "z": "52bac4d7.a2850c",
-        "name": "admin app",
-        "topic": "",
-        "url": "admin",
-        "fwdInMessages": false,
-        "allowScripts": true,
-        "allowStyles": true,
-        "copyIndex": true,
-        "templateFolder": "vue",
-        "extTemplate": "",
-        "showfolder": false,
-        "reload": false,
-        "sourceFolder": "src",
-        "deployedVersion": "5.1.1",
-        "x": 570,
-        "y": 440,
-        "wires": [
-            [
-                "c1f915d0.a25d68",
-                "e1cb618a.ce3ed"
-            ],
-            [
-                "31345eb1.ef8a72"
-            ]
-        ]
-    },
-    {
-        "id": "4933f768.9f3008",
-        "type": "uibuilder",
-        "z": "52bac4d7.a2850c",
-        "name": "Polling",
-        "topic": "",
-        "url": "polling",
-        "fwdInMessages": false,
-        "allowScripts": false,
-        "allowStyles": true,
-        "copyIndex": true,
-        "templateFolder": "vue",
-        "extTemplate": "",
-        "showfolder": false,
-        "reload": false,
-        "sourceFolder": "src",
-        "deployedVersion": "5.1.1",
-        "x": 3490,
-        "y": 560,
-        "wires": [
-            [
-                "57c71e36.9fe28",
-                "44920056.56b72"
-            ],
-            []
-        ]
     },
     {
         "id": "7a44eaa8.b0adc4",
