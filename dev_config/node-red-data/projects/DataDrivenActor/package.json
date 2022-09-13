@@ -1,0 +1,15 @@
+{
+    "name": "Civic-Digits",
+    "description": "A Node-RED Project",
+    "version": "0.0.1",
+    "dependencies": {
+        "node-red-contrib-uibuilder": "3.2.0",
+        "node-red-node-rbe": "0.2.9"
+    },
+    "node-red": {
+        "settings": {
+            "flowFile": "flow.json",
+            "credentialsFile": "flow_cred.json"
+        }
+    }
+}
