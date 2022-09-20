@@ -411,7 +411,7 @@
         "z": "52bac4d7.a2850c",
         "name": "spacer",
         "group": "e7ea26e6.3e9db",
-        "order": 10,
+        "order": 12,
         "width": "5",
         "height": "1"
     },
@@ -421,7 +421,7 @@
         "z": "52bac4d7.a2850c",
         "name": "spacer",
         "group": "e7ea26e6.3e9db",
-        "order": 16,
+        "order": 19,
         "width": "1",
         "height": "2",
         "className": ""
@@ -1703,8 +1703,8 @@
         "y": 380,
         "wires": [
             [
-                "3cfcb614.581a2a",
-                "1b6dded15d53cb04"
+                "1b6dded15d53cb04",
+                "3cfcb614.581a2a"
             ]
         ]
     },
@@ -1989,16 +1989,16 @@
         "type": "debug",
         "z": "52bac4d7.a2850c",
         "name": "",
-        "active": false,
+        "active": true,
         "tosidebar": true,
-        "console": false,
+        "console": true,
         "tostatus": false,
         "complete": "payload",
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1250,
-        "y": 420,
+        "x": 1720,
+        "y": 780,
         "wires": []
     },
     {
@@ -2237,6 +2237,7 @@
         "id": "72dc02f.a8dabfc",
         "type": "ui_slider",
         "z": "52bac4d7.a2850c",
+        "d": true,
         "name": "Left Eyebrow Angle",
         "label": "Left Angle",
         "tooltip": "",
@@ -2264,11 +2265,12 @@
         "id": "80f10bea.f6ce8",
         "type": "ui_slider",
         "z": "52bac4d7.a2850c",
+        "d": true,
         "name": "Right Eyebrow Angle",
         "label": "Right Angle",
         "tooltip": "block: joy",
         "group": "e7ea26e6.3e9db",
-        "order": 8,
+        "order": 9,
         "width": 0,
         "height": 0,
         "passthru": false,
@@ -2326,11 +2328,12 @@
         "type": "function",
         "z": "52bac4d7.a2850c",
         "name": "Face 1",
-        "func": "let topic = msg.topic;\nlet payload = msg.payload;\n\nlet currentEmotion = flow.get('face1_' + 'currentEmotion') || 'face1_emotion1'\n\nswitch (topic) {\n    case 'name':\n        flow.set(currentEmotion + '_' + topic, payload)\n        break\n    case 'l_eye_colour':\n        flow.set(currentEmotion + '_' + topic, payload)\n        break\n    case 'l_eye_count':\n        flow.set(currentEmotion + '_' + topic, payload)\n        break\n    case 'r_eye_colour':\n        flow.set(currentEmotion + '_' + topic, payload)\n        break\n    case 'r_eye_count':\n        flow.set(currentEmotion + '_' + topic, payload)\n        break\n    case 'l_eyebrow_angle':\n        flow.set(currentEmotion + '_' + 'l_eyebrow_angle', payload)\n        break\n    case 'r_eyebrow_angle':\n        flow.set(currentEmotion + '_' + topic, msg.payload)\n        break\n    case 'mouth_angle':\n        flow.set(currentEmotion + '_' + topic, msg.payload)\n        break\n    case 'l_eyebrow_command':\n        break\n    case 'r_eyebrow_command':\n        break\n    case 'l_eye_command':\n        break\n    case 'r_eye_command':\n        break\n    case 'mouth':\n        break\n}\n\nreturn {topic: currentEmotion,payload: topic + '_' + payload}\n\n//flow.set('angry' + msg.topic, msg.payload)\n",
+        "func": "let topic = msg.topic;\nlet payload = msg.payload;\n\nlet currentEmotion = flow.get('face1_' + 'currentEmotion') || 'face1_emotion1'\n\nswitch (topic) {\n    case 'name':\n        flow.set(currentEmotion + '_' + topic, payload)\n        break\n    case 'l_eye_colour':\n        flow.set(currentEmotion + '_' + topic, payload)\n        break\n    case 'l_eye_count':\n        flow.set(currentEmotion + '_' + topic, payload)\n        break\n    case 'r_eye_colour':\n        flow.set(currentEmotion + '_' + topic, payload)\n        break\n    case 'r_eye_count':\n        flow.set(currentEmotion + '_' + topic, payload)\n        break\n    case 'l_eyebrow_angle':\n        flow.set(currentEmotion + '_' + 'l_eyebrow_angle', payload)\n        break\n    case 'r_eyebrow_angle':\n        flow.set(currentEmotion + '_' + topic, msg.payload)\n        break\n    case 'mouth_angle':\n        flow.set(currentEmotion + '_' + topic, msg.payload)\n        break\n    case 'l_eyebrow_command':\n        break\n    case 'r_eyebrow_command':\n        break\n    case 'l_eye_command':\n        break\n    case 'r_eye_command':\n        break\n    case 'mouth':\n        break\n}\nnode.warn('The message being set is ' + currentEmotion + ' ' + topic + '_' + payload)\nreturn {topic: currentEmotion,payload: topic + '_' + payload}\n\n//flow.set('angry' + msg.topic, msg.payload)\n",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
+        "libs": [],
         "x": 3370,
         "y": 700,
         "wires": [
@@ -2344,7 +2347,7 @@
         "type": "ui_text",
         "z": "52bac4d7.a2850c",
         "group": "e7ea26e6.3e9db",
-        "order": 17,
+        "order": 20,
         "width": 0,
         "height": 0,
         "name": "",
@@ -2365,7 +2368,7 @@
         "tooltip": "Sets right eye colour",
         "place": "Select option",
         "group": "e7ea26e6.3e9db",
-        "order": 18,
+        "order": 21,
         "width": 0,
         "height": 0,
         "passthru": false,
@@ -2428,11 +2431,12 @@
         "id": "49e38e7c.b3f648",
         "type": "ui_slider",
         "z": "52bac4d7.a2850c",
+        "d": true,
         "name": "Right Eye Count",
         "label": "LED Count",
         "tooltip": "",
         "group": "e7ea26e6.3e9db",
-        "order": 19,
+        "order": 22,
         "width": 0,
         "height": 0,
         "passthru": false,
@@ -2595,7 +2599,7 @@
         "type": "ui_text",
         "z": "52bac4d7.a2850c",
         "group": "e7ea26e6.3e9db",
-        "order": 11,
+        "order": 13,
         "width": 0,
         "height": 0,
         "name": "",
@@ -2616,7 +2620,7 @@
         "tooltip": "Sets left eye colour",
         "place": "Select option",
         "group": "e7ea26e6.3e9db",
-        "order": 12,
+        "order": 14,
         "width": 0,
         "height": 0,
         "passthru": false,
@@ -2679,11 +2683,12 @@
         "id": "941432bc.c575a8",
         "type": "ui_slider",
         "z": "52bac4d7.a2850c",
+        "d": true,
         "name": "Left Eye Count",
         "label": "LED Count",
         "tooltip": "",
         "group": "e7ea26e6.3e9db",
-        "order": 13,
+        "order": 15,
         "width": 0,
         "height": 0,
         "passthru": false,
@@ -2707,7 +2712,7 @@
         "type": "ui_text",
         "z": "52bac4d7.a2850c",
         "group": "e7ea26e6.3e9db",
-        "order": 23,
+        "order": 26,
         "width": 0,
         "height": 0,
         "name": "",
@@ -2723,11 +2728,12 @@
         "id": "7fdef730.a8afa8",
         "type": "ui_slider",
         "z": "52bac4d7.a2850c",
+        "d": true,
         "name": "Mouth Angle",
         "label": "Angle",
         "tooltip": "",
         "group": "e7ea26e6.3e9db",
-        "order": 24,
+        "order": 27,
         "width": 0,
         "height": 0,
         "passthru": false,
@@ -2832,25 +2838,30 @@
                 "2199d7cb.e4a51"
             ],
             [
-                "72dc02f.a8dabfc"
+                "72dc02f.a8dabfc",
+                "40d146812fb847ee"
             ],
             [
-                "80f10bea.f6ce8"
+                "80f10bea.f6ce8",
+                "deaa514f7948a203"
             ],
             [
                 "e5f99c1a.b5b718"
             ],
             [
-                "941432bc.c575a8"
+                "941432bc.c575a8",
+                "2cce300e5f2b2f64"
             ],
             [
                 "a9967124.678228"
             ],
             [
-                "49e38e7c.b3f648"
+                "49e38e7c.b3f648",
+                "c6eb54365cdbd299"
             ],
             [
-                "7fdef730.a8afa8"
+                "7fdef730.a8afa8",
+                "47ab21739dbee93f"
             ]
         ],
         "outputLabels": [
@@ -2957,7 +2968,7 @@
         "tooltip": "",
         "place": "Select command",
         "group": "e7ea26e6.3e9db",
-        "order": 7,
+        "order": 8,
         "width": 0,
         "height": 0,
         "passthru": false,
@@ -3005,7 +3016,7 @@
         "tooltip": "",
         "place": "Select command",
         "group": "e7ea26e6.3e9db",
-        "order": 9,
+        "order": 11,
         "width": 0,
         "height": 0,
         "passthru": true,
@@ -3053,7 +3064,7 @@
         "tooltip": "",
         "place": "Select command",
         "group": "e7ea26e6.3e9db",
-        "order": 25,
+        "order": 29,
         "width": 0,
         "height": 0,
         "passthru": true,
@@ -3101,7 +3112,7 @@
         "tooltip": "",
         "place": "Select command",
         "group": "e7ea26e6.3e9db",
-        "order": 14,
+        "order": 17,
         "width": 0,
         "height": 0,
         "passthru": true,
@@ -3149,7 +3160,7 @@
         "tooltip": "",
         "place": "Select command",
         "group": "e7ea26e6.3e9db",
-        "order": 20,
+        "order": 24,
         "width": 0,
         "height": 0,
         "passthru": true,
@@ -3196,7 +3207,7 @@
         "label": "Speed",
         "tooltip": "",
         "group": "e7ea26e6.3e9db",
-        "order": 15,
+        "order": 18,
         "width": 0,
         "height": 0,
         "wrap": true,
@@ -3224,7 +3235,7 @@
         "label": "Speed",
         "tooltip": "",
         "group": "e7ea26e6.3e9db",
-        "order": 21,
+        "order": 25,
         "width": 0,
         "height": 0,
         "wrap": true,
@@ -4160,6 +4171,7 @@
         "id": "28a64b46.2c738c",
         "type": "ui_slider",
         "z": "52bac4d7.a2850c",
+        "d": true,
         "name": "Left Eyebrow Angle",
         "label": "Left Angle",
         "tooltip": "",
@@ -4187,11 +4199,12 @@
         "id": "293a7748.241348",
         "type": "ui_slider",
         "z": "52bac4d7.a2850c",
+        "d": true,
         "name": "Right Eyebrow Angle",
         "label": "Right Angle",
         "tooltip": "block: joy",
         "group": "7ed8a98b.48af38",
-        "order": 8,
+        "order": 9,
         "width": 0,
         "height": 0,
         "passthru": false,
@@ -4215,7 +4228,7 @@
         "type": "ui_text",
         "z": "52bac4d7.a2850c",
         "group": "7ed8a98b.48af38",
-        "order": 10,
+        "order": 12,
         "width": 0,
         "height": 0,
         "name": "",
@@ -4236,7 +4249,7 @@
         "tooltip": "Sets left eye colour",
         "place": "Select option",
         "group": "7ed8a98b.48af38",
-        "order": 11,
+        "order": 13,
         "width": 0,
         "height": 0,
         "passthru": false,
@@ -4299,11 +4312,12 @@
         "id": "ff683a66.13a99",
         "type": "ui_slider",
         "z": "52bac4d7.a2850c",
+        "d": true,
         "name": "Left Eye Count",
         "label": "LED Count",
         "tooltip": "",
         "group": "7ed8a98b.48af38",
-        "order": 12,
+        "order": 14,
         "width": 0,
         "height": 0,
         "passthru": false,
@@ -4327,7 +4341,7 @@
         "type": "ui_text",
         "z": "52bac4d7.a2850c",
         "group": "7ed8a98b.48af38",
-        "order": 15,
+        "order": 18,
         "width": 0,
         "height": 0,
         "name": "",
@@ -4348,7 +4362,7 @@
         "tooltip": "Sets right eye colour",
         "place": "Select option",
         "group": "7ed8a98b.48af38",
-        "order": 16,
+        "order": 19,
         "width": 0,
         "height": 0,
         "passthru": false,
@@ -4411,11 +4425,12 @@
         "id": "8942363c.388718",
         "type": "ui_slider",
         "z": "52bac4d7.a2850c",
+        "d": true,
         "name": "Right Eye Count",
         "label": "LED Count",
         "tooltip": "",
         "group": "7ed8a98b.48af38",
-        "order": 17,
+        "order": 20,
         "width": 0,
         "height": 0,
         "passthru": false,
@@ -4439,7 +4454,7 @@
         "type": "ui_text",
         "z": "52bac4d7.a2850c",
         "group": "7ed8a98b.48af38",
-        "order": 20,
+        "order": 24,
         "width": 0,
         "height": 0,
         "name": "",
@@ -4455,11 +4470,12 @@
         "id": "cc3cbcb3.f9bbe",
         "type": "ui_slider",
         "z": "52bac4d7.a2850c",
+        "d": true,
         "name": "Mouth Angle",
         "label": "Angle",
         "tooltip": "",
         "group": "7ed8a98b.48af38",
-        "order": 21,
+        "order": 25,
         "width": 0,
         "height": 0,
         "passthru": false,
@@ -4496,25 +4512,30 @@
                 "a449e46a.59407"
             ],
             [
-                "28a64b46.2c738c"
+                "28a64b46.2c738c",
+                "5595cd853ce7b17a"
             ],
             [
-                "293a7748.241348"
+                "293a7748.241348",
+                "7ea0bc1a0b943c89"
             ],
             [
                 "48955bb8.9960c4"
             ],
             [
-                "ff683a66.13a99"
+                "ff683a66.13a99",
+                "6717c7efdc2aba98"
             ],
             [
                 "e0736e17.1c29b"
             ],
             [
-                "8942363c.388718"
+                "8942363c.388718",
+                "f7a849fae6c89b5f"
             ],
             [
-                "cc3cbcb3.f9bbe"
+                "cc3cbcb3.f9bbe",
+                "d9f450264f7769a6"
             ]
         ],
         "outputLabels": [
@@ -4691,7 +4712,7 @@
         "tooltip": "",
         "place": "Select command",
         "group": "7ed8a98b.48af38",
-        "order": 7,
+        "order": 8,
         "width": 0,
         "height": 0,
         "passthru": false,
@@ -4739,7 +4760,7 @@
         "tooltip": "",
         "place": "Select command",
         "group": "7ed8a98b.48af38",
-        "order": 9,
+        "order": 11,
         "width": 0,
         "height": 0,
         "passthru": true,
@@ -4787,7 +4808,7 @@
         "tooltip": "",
         "place": "Select command",
         "group": "7ed8a98b.48af38",
-        "order": 13,
+        "order": 16,
         "width": 0,
         "height": 0,
         "passthru": true,
@@ -4834,7 +4855,7 @@
         "label": "Speed",
         "tooltip": "",
         "group": "7ed8a98b.48af38",
-        "order": 14,
+        "order": 17,
         "width": 0,
         "height": 0,
         "wrap": true,
@@ -4863,7 +4884,7 @@
         "tooltip": "",
         "place": "Select command",
         "group": "7ed8a98b.48af38",
-        "order": 18,
+        "order": 22,
         "width": 0,
         "height": 0,
         "passthru": true,
@@ -4910,7 +4931,7 @@
         "label": "Speed",
         "tooltip": "",
         "group": "7ed8a98b.48af38",
-        "order": 19,
+        "order": 23,
         "width": 0,
         "height": 0,
         "wrap": true,
@@ -4939,7 +4960,7 @@
         "tooltip": "",
         "place": "Select command",
         "group": "7ed8a98b.48af38",
-        "order": 22,
+        "order": 27,
         "width": 0,
         "height": 0,
         "passthru": true,
@@ -5166,7 +5187,8 @@
         "wires": [
             [
                 "872c61e3.98945",
-                "1b6dded15d53cb04"
+                "1b6dded15d53cb04",
+                "3cfcb614.581a2a"
             ],
             [
                 "31345eb1.ef8a72"
@@ -5766,6 +5788,286 @@
         "x": 4880,
         "y": 2140,
         "wires": []
+    },
+    {
+        "id": "40d146812fb847ee",
+        "type": "ui_numeric",
+        "z": "52bac4d7.a2850c",
+        "name": "Left Eyebrow Angle",
+        "label": "Left Angle",
+        "tooltip": "",
+        "group": "e7ea26e6.3e9db",
+        "order": 7,
+        "width": 0,
+        "height": 0,
+        "wrap": false,
+        "passthru": true,
+        "topic": "l_eyebrow_angle",
+        "topicType": "str",
+        "format": "{{value}}",
+        "min": "1",
+        "max": "180",
+        "step": 1,
+        "className": "",
+        "x": 3080,
+        "y": 300,
+        "wires": [
+            [
+                "cb716f51.65a29"
+            ]
+        ]
+    },
+    {
+        "id": "deaa514f7948a203",
+        "type": "ui_numeric",
+        "z": "52bac4d7.a2850c",
+        "name": "Right Eyebrow Angle",
+        "label": "Right Angle",
+        "tooltip": "",
+        "group": "e7ea26e6.3e9db",
+        "order": 10,
+        "width": 0,
+        "height": 0,
+        "wrap": false,
+        "passthru": true,
+        "topic": "r_eyebrow_angle",
+        "topicType": "str",
+        "format": "{{value}}",
+        "min": "1",
+        "max": "180",
+        "step": 1,
+        "className": "",
+        "x": 3080,
+        "y": 400,
+        "wires": [
+            [
+                "cb716f51.65a29"
+            ]
+        ]
+    },
+    {
+        "id": "2cce300e5f2b2f64",
+        "type": "ui_numeric",
+        "z": "52bac4d7.a2850c",
+        "name": "Left Eye Count",
+        "label": "LED Count",
+        "tooltip": "",
+        "group": "e7ea26e6.3e9db",
+        "order": 16,
+        "width": 0,
+        "height": 0,
+        "wrap": false,
+        "passthru": true,
+        "topic": "l_eye_count",
+        "topicType": "str",
+        "format": "{{value}}",
+        "min": "1",
+        "max": "180",
+        "step": 1,
+        "className": "",
+        "x": 3040,
+        "y": 560,
+        "wires": [
+            [
+                "cb716f51.65a29"
+            ]
+        ]
+    },
+    {
+        "id": "c6eb54365cdbd299",
+        "type": "ui_numeric",
+        "z": "52bac4d7.a2850c",
+        "name": "Right Eye Count",
+        "label": "LED Count",
+        "tooltip": "",
+        "group": "e7ea26e6.3e9db",
+        "order": 23,
+        "width": 0,
+        "height": 0,
+        "wrap": false,
+        "passthru": true,
+        "topic": "r_eye_count",
+        "topicType": "str",
+        "format": "{{value}}",
+        "min": "1",
+        "max": "180",
+        "step": 1,
+        "className": "",
+        "x": 2990,
+        "y": 720,
+        "wires": [
+            [
+                "cb716f51.65a29"
+            ]
+        ]
+    },
+    {
+        "id": "47ab21739dbee93f",
+        "type": "ui_numeric",
+        "z": "52bac4d7.a2850c",
+        "name": "Mouth Angle",
+        "label": "Angle",
+        "tooltip": "",
+        "group": "e7ea26e6.3e9db",
+        "order": 28,
+        "width": 0,
+        "height": 0,
+        "wrap": false,
+        "passthru": true,
+        "topic": "mouth_angle",
+        "topicType": "str",
+        "format": "{{value}}",
+        "min": "1",
+        "max": "180",
+        "step": 1,
+        "className": "",
+        "x": 2900,
+        "y": 860,
+        "wires": [
+            [
+                "cb716f51.65a29"
+            ]
+        ]
+    },
+    {
+        "id": "5595cd853ce7b17a",
+        "type": "ui_numeric",
+        "z": "52bac4d7.a2850c",
+        "name": "Left Eyebrow Angle",
+        "label": "Left Angle",
+        "tooltip": "",
+        "group": "7ed8a98b.48af38",
+        "order": 7,
+        "width": 0,
+        "height": 0,
+        "wrap": false,
+        "passthru": true,
+        "topic": "l_eyebrow_angle",
+        "topicType": "str",
+        "format": "{{value}}",
+        "min": "1",
+        "max": "180",
+        "step": 1,
+        "className": "",
+        "x": 2800,
+        "y": 1140,
+        "wires": [
+            [
+                "7d604614.6ad2d8"
+            ]
+        ]
+    },
+    {
+        "id": "7ea0bc1a0b943c89",
+        "type": "ui_numeric",
+        "z": "52bac4d7.a2850c",
+        "name": "Right Eyebrow Angle",
+        "label": "Right Angle",
+        "tooltip": "",
+        "group": "7ed8a98b.48af38",
+        "order": 10,
+        "width": 0,
+        "height": 0,
+        "wrap": false,
+        "passthru": true,
+        "topic": "r_eyebrow_angle",
+        "topicType": "str",
+        "format": "{{value}}",
+        "min": "1",
+        "max": "180",
+        "step": 1,
+        "className": "",
+        "x": 2800,
+        "y": 1220,
+        "wires": [
+            [
+                "7d604614.6ad2d8"
+            ]
+        ]
+    },
+    {
+        "id": "6717c7efdc2aba98",
+        "type": "ui_numeric",
+        "z": "52bac4d7.a2850c",
+        "name": "Left Eye Count",
+        "label": "LED Count",
+        "tooltip": "",
+        "group": "7ed8a98b.48af38",
+        "order": 15,
+        "width": 0,
+        "height": 0,
+        "wrap": false,
+        "passthru": true,
+        "topic": "l_eye_count",
+        "topicType": "str",
+        "format": "{{value}}",
+        "min": "1",
+        "max": "180",
+        "step": 1,
+        "className": "",
+        "x": 2780,
+        "y": 1380,
+        "wires": [
+            [
+                "7d604614.6ad2d8"
+            ]
+        ]
+    },
+    {
+        "id": "f7a849fae6c89b5f",
+        "type": "ui_numeric",
+        "z": "52bac4d7.a2850c",
+        "name": "Right Eye Count",
+        "label": "LED Count",
+        "tooltip": "",
+        "group": "7ed8a98b.48af38",
+        "order": 21,
+        "width": 0,
+        "height": 0,
+        "wrap": false,
+        "passthru": true,
+        "topic": "r_eye_count",
+        "topicType": "str",
+        "format": "{{value}}",
+        "min": "1",
+        "max": "180",
+        "step": 1,
+        "className": "",
+        "x": 2790,
+        "y": 1540,
+        "wires": [
+            [
+                "7d604614.6ad2d8"
+            ]
+        ]
+    },
+    {
+        "id": "d9f450264f7769a6",
+        "type": "ui_numeric",
+        "z": "52bac4d7.a2850c",
+        "name": "Mouth Angle",
+        "label": "Angle",
+        "tooltip": "",
+        "group": "7ed8a98b.48af38",
+        "order": 26,
+        "width": 0,
+        "height": 0,
+        "wrap": false,
+        "passthru": true,
+        "topic": "mouth_angle",
+        "topicType": "str",
+        "format": "{{value}}",
+        "min": "1",
+        "max": "180",
+        "step": 1,
+        "className": "",
+        "x": 2800,
+        "y": 1680,
+        "wires": [
+            [
+                "7d604614.6ad2d8"
+            ]
+        ]
     },
     {
         "id": "7a44eaa8.b0adc4",
