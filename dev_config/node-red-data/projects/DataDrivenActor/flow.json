@@ -5335,7 +5335,7 @@
         "type": "function",
         "z": "52bac4d7.a2850c",
         "name": "sendCustomCommand",
-        "func": "var payload=msg.payload;\n// node.warn('Custom command ')\n// node.warn(msg.payload)\nvar output_msg = [];\n\nlet blocks = ['bob', 'joy', 'eve', 'fin', 'caz', 'tim', 'jim', 'ada', 'ben', 'lou']\n\nswitch (msg.topic) {\n    case 'face1_block':\n        flow.set('customBlock1Name', msg.payload)\n        break;\n    case 'face1_command':\n        flow.set(\"customBlock1Command\", msg.payload)\n        break;\n    case 'face1_button':\n        let block1 = flow.get('customBlock1Name')\n        let command1 = flow.get('customBlock1Command')\n        output_msg.push({ topic: block1, payload: command1 });\n        return [output_msg];\n    case 'face2_block':\n        flow.set('customBlock2Name', msg.payload)\n        break;\n    case 'face2_command':\n        flow.set(\"customBlock2Command\", msg.payload)\n        break;\n    case 'face2_button':\n        let block2 = flow.get('customBlock2Name')\n        let command2 = flow.get('customBlockCommand')\n        output_msg.push({ topic: block2, payload: command2 });\n        return [output_msg];\n    default:\n        break;\n}\n",
+        "func": "var payload=msg.payload;\n// node.warn('Custom command ')\n// node.warn(msg.payload)\nvar output_msg = [];\n\nlet blocks = ['bob', 'joy', 'eve', 'fin', 'caz', 'tim', 'jim', 'ada', 'ben', 'lou']\n\nswitch (msg.topic) {\n    case 'face1_block':\n        flow.set('customBlock1Name', msg.payload)\n        break;\n    case 'face1_command':\n        flow.set(\"customBlock1Command\", msg.payload)\n        break;\n    case 'face1_button':\n        let block1 = flow.get('customBlock1Name')\n        let command1 = flow.get('customBlock1Command')\n        output_msg.push({ topic: block1, payload: command1 });\n        return [output_msg];\n    case 'face2_block':\n        flow.set('customBlock2Name', msg.payload)\n        break;\n    case 'face2_command':\n        flow.set(\"customBlock2Command\", msg.payload)\n        break;\n    case 'face2_button':\n        let block2 = flow.get('customBlock2Name')\n        let command2 = flow.get('customBlock2Command')\n        output_msg.push({ topic: block2, payload: command2 });\n        return [output_msg];\n    default:\n        break;\n}\n",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -5392,7 +5392,7 @@
         "options": [
             {
                 "label": "Tim",
-                "value": "time",
+                "value": "tim",
                 "type": "str"
             },
             {
