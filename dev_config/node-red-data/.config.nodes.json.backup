@@ -657,7 +657,7 @@
     },
     "node-red-contrib-uibuilder": {
         "name": "node-red-contrib-uibuilder",
-        "version": "3.2.0",
+        "version": "5.1.1",
         "local": true,
         "user": true,
         "nodes": {
@@ -671,8 +671,40 @@
                 "user": false,
                 "module": "node-red-contrib-uibuilder",
                 "file": "/data/node_modules/node-red-contrib-uibuilder/nodes/uibuilder.js"
+            },
+            "uib-sender": {
+                "name": "uib-sender",
+                "types": [
+                    "uib-sender"
+                ],
+                "enabled": true,
+                "local": true,
+                "user": false,
+                "module": "node-red-contrib-uibuilder",
+                "file": "/data/node_modules/node-red-contrib-uibuilder/nodes/uib-sender.js"
+            },
+            "uib-cache": {
+                "name": "uib-cache",
+                "types": [
+                    "uib-cache"
+                ],
+                "enabled": true,
+                "local": true,
+                "user": false,
+                "module": "node-red-contrib-uibuilder",
+                "file": "/data/node_modules/node-red-contrib-uibuilder/nodes/uib-cache.js"
+            },
+            "uib-list": {
+                "name": "uib-list",
+                "types": [
+                    "uib-list"
+                ],
+                "enabled": true,
+                "local": true,
+                "user": false,
+                "module": "node-red-contrib-uibuilder",
+                "file": "/data/node_modules/node-red-contrib-uibuilder/nodes/uib-list/customNode.js"
             }
-        },
-        "pending_version": "5.1.1"
+        }
     }
 }

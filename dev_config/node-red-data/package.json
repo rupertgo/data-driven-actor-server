@@ -9,6 +9,7 @@
     "dependencies": {
         "bootstrap": "^5.2.0",
         "bootstrap-vue": "^2.22.0",
+        "node-red-contrib-ip": "~1.0.1",
         "node-red-contrib-uibuilder": "~5.1.1",
         "node-red-dashboard": "~3.1.7",
         "vue": "^3.2.37"

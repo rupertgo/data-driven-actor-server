@@ -516,7 +516,7 @@
         "icon": "phone_iphone",
         "order": 5,
         "disabled": false,
-        "hidden": true
+        "hidden": false
     },
     {
         "id": "1c939e85.3b5999",
@@ -5228,9 +5228,9 @@
         "id": "4933f768.9f3008",
         "type": "uibuilder",
         "z": "52bac4d7.a2850c",
-        "name": "Polling",
+        "name": "Polling 5",
         "topic": "",
-        "url": "polling",
+        "url": "polling5",
         "fwdInMessages": false,
         "allowScripts": false,
         "allowStyles": true,
@@ -5241,7 +5241,7 @@
         "reload": false,
         "sourceFolder": "src",
         "deployedVersion": "5.1.1",
-        "x": 3490,
+        "x": 3520,
         "y": 620,
         "wires": [
             [
@@ -6068,6 +6068,166 @@
                 "7d604614.6ad2d8"
             ]
         ]
+    },
+    {
+        "id": "0f98b1787a14d5a5",
+        "type": "uibuilder",
+        "z": "52bac4d7.a2850c",
+        "name": "Polling 4",
+        "topic": "",
+        "url": "polling4",
+        "fwdInMessages": false,
+        "allowScripts": false,
+        "allowStyles": true,
+        "copyIndex": true,
+        "templateFolder": "vue",
+        "extTemplate": "",
+        "showfolder": false,
+        "reload": false,
+        "sourceFolder": "src",
+        "deployedVersion": "5.1.1",
+        "x": 3520,
+        "y": 580,
+        "wires": [
+            [],
+            []
+        ]
+    },
+    {
+        "id": "aa2a5d149c103e37",
+        "type": "uibuilder",
+        "z": "52bac4d7.a2850c",
+        "name": "Polling 3",
+        "topic": "",
+        "url": "polling3",
+        "fwdInMessages": false,
+        "allowScripts": false,
+        "allowStyles": false,
+        "copyIndex": true,
+        "templateFolder": "vue",
+        "extTemplate": "",
+        "showfolder": false,
+        "reload": false,
+        "sourceFolder": "src",
+        "deployedVersion": "5.1.1",
+        "x": 3520,
+        "y": 540,
+        "wires": [
+            [],
+            []
+        ]
+    },
+    {
+        "id": "31a4d80d9c38f772",
+        "type": "uibuilder",
+        "z": "52bac4d7.a2850c",
+        "name": "Polling 2",
+        "topic": "",
+        "url": "polling2",
+        "fwdInMessages": false,
+        "allowScripts": false,
+        "allowStyles": false,
+        "copyIndex": true,
+        "templateFolder": "vue",
+        "extTemplate": "",
+        "showfolder": false,
+        "reload": false,
+        "sourceFolder": "src",
+        "deployedVersion": "5.1.1",
+        "x": 3520,
+        "y": 500,
+        "wires": [
+            [],
+            []
+        ]
+    },
+    {
+        "id": "77a945b0f0963c5d",
+        "type": "uibuilder",
+        "z": "52bac4d7.a2850c",
+        "name": "User Polling Hub",
+        "topic": "",
+        "url": "userpolling",
+        "fwdInMessages": false,
+        "allowScripts": false,
+        "allowStyles": false,
+        "copyIndex": true,
+        "templateFolder": "vue",
+        "extTemplate": "",
+        "showfolder": false,
+        "reload": false,
+        "sourceFolder": "src",
+        "deployedVersion": "5.1.1",
+        "x": 4160,
+        "y": 1340,
+        "wires": [
+            [],
+            []
+        ]
+    },
+    {
+        "id": "736bf55ddb64d65d",
+        "type": "ip",
+        "z": "52bac4d7.a2850c",
+        "name": "ip",
+        "https": true,
+        "timeout": "5000",
+        "internalIPv4": true,
+        "internalIPv6": true,
+        "publicIPv4": true,
+        "publicIPv6": true,
+        "x": 3870,
+        "y": 1440,
+        "wires": [
+            [
+                "383ee4365921c295"
+            ]
+        ]
+    },
+    {
+        "id": "ce4eeee40cd6d115",
+        "type": "inject",
+        "z": "52bac4d7.a2850c",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 3720,
+        "y": 1420,
+        "wires": [
+            [
+                "736bf55ddb64d65d"
+            ]
+        ]
+    },
+    {
+        "id": "383ee4365921c295",
+        "type": "debug",
+        "z": "52bac4d7.a2850c",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 4020,
+        "y": 1440,
+        "wires": []
     },
     {
         "id": "7a44eaa8.b0adc4",
