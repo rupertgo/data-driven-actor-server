@@ -52,6 +52,7 @@
         "debug": {
             "filter": "filterAll",
             "filteredNodes": []
-        }
+        },
+        "menu-menu-item-sidebar": false
     }
 }
