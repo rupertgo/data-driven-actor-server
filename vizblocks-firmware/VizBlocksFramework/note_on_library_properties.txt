@@ -1,0 +1,7 @@
+Delete Me At A Future Date
+
+https://arduino.github.io/arduino-cli/library-specification/
+
+Useful Flags:
+
+precompiled: especially if this will only be iused on ESP8266 boards  

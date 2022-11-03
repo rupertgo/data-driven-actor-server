@@ -53,6 +53,6 @@
             "filter": "filterAll",
             "filteredNodes": []
         },
-        "menu-menu-item-sidebar": false
+        "menu-menu-item-sidebar": true
     }
 }

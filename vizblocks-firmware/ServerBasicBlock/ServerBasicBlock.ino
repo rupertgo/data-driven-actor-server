@@ -20,8 +20,8 @@ char _name[10];
  */
 VizBlock node(
   "null",       // Our ID
-  "SKYSISGG",  //Wifi Access Point
-  "aTCD94gHMFsD",  //WiFi Password
+  "",  //Wifi Access Point
+  "",  //WiFi Password
   "192.168.0.72",//IP address of comp/wifi
    1883,         //Port for Node RED server
    "CivicDigits",  //MQTT username
@@ -105,10 +105,10 @@ void setup()
   node.add(new BreatheLEDs(&strip, "breathe", 120, 0 ));
 
   //Homemade fns
-//  node.add(new LightHappyOrSad(&strip, "sadness"));
-//  node.add(new Col(&strip, "col"));
-//  node.add(new PulseCol(&strip, "pulsecol"));
-//  node.add(new BlinkCol(&strip, "blinkcol"));
+  node.add(new LightHappyOrSad(&strip, "sadness"));
+  node.add(new Col(&strip, "col"));
+  node.add(new PulseCol(&strip, "pulsecol"));
+  node.add(new BlinkCol(&strip, "blinkcol"));
  
   //Initialise the node
   node.set_wifi(true);

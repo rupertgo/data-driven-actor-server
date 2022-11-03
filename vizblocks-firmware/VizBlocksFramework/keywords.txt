@@ -1,0 +1,22 @@
+#######################################
+# Syntax Colouring Map For VizBlocks
+#######################################
+
+#######################################
+# Class (KEYWORD1)
+#######################################
+
+VizBlock	KEYWORD1
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+
+# methods names in commond
+run	KEYWORD2
+
+#######################################
+# Constants (LITERAL1)
+#######################################
+
+NUM_BACKGROUND_BEHAVIOURS	LITERAL1

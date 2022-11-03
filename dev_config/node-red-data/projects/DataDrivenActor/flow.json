@@ -3413,7 +3413,7 @@
         "order": 3,
         "width": 0,
         "height": 0,
-        "format": "<script>\n(function(scope) {\n    scope.$watch('msg.payload', function(data) {\n        if (data == \"Face-Tracker\") {\n          //window.open(\"https://www.nodered.org\");\n          window.location.href = \"https://192.168.4.1/face-tracker/\";\n        } \n        if (data == \"Weather\") {\n          //window.open(\"https://github.com/node-red\");\n          window.location.href = \"https://192.168.4.1/face-tracker/dataset.html \";\n        } \n    });\n})(scope);\n</script>",
+        "format": "<script>\n(function(scope) {\n    scope.$watch('msg.payload', function(data) {\n        if (data == \"Face-Tracker\") {\n          //window.open(\"https://www.nodered.org\");\n          window.location.href = \"/face-tracker/\";\n        } \n        if (data == \"Weather\") {\n          //window.open(\"https://github.com/node-red\");\n          window.location.href = \"/face-tracker/dataset.html \";\n        } \n    });\n})(scope);\n</script>",
         "storeOutMessages": false,
         "fwdInMessages": true,
         "resendOnRefresh": false,
