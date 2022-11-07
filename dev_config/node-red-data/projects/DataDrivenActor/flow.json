@@ -2310,7 +2310,7 @@
         "id": "57c71e36.9fe28",
         "type": "debug",
         "z": "52bac4d7.a2850c",
-        "name": "",
+        "name": "Calc Poll Emotion",
         "active": false,
         "tosidebar": true,
         "console": false,
@@ -2319,7 +2319,7 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 3930,
+        "x": 4010,
         "y": 580,
         "wires": []
     },
@@ -3360,7 +3360,7 @@
         "type": "function",
         "z": "52bac4d7.a2850c",
         "name": "Calculate Poll Emotion ",
-        "func": "let ans1 = flow.get('face1_answer1_count');\nlet ans2 = flow.get('face1_answer2_count');\nlet ans3 = flow.get('face1_answer3_count');\nlet ans4 = flow.get('face1_answer4_count');\nlet ans5 = flow.get('face1_answer5_count');\n\nlet threshold = flow.get('face1_poll_threshold') || 50;\n\nlet answers = [ans1, ans2, ans3, ans4, ans5];\n\nvar max = answers[0];\nvar maxIndex = 0;\n\nfor (var i = 1; i < answers.length; i++) {\n    if (answers[i] > max) {\n        maxIndex = i;\n        max = answers[i];\n    }\n}\n\n// let result = Math.round((ans1 / (ans1 + ans2) * 100));\nswitch (maxIndex) {\n    case 0:\n        let react1 = flow.get('face1_reaction1')\n        return { topic: 'face1', payload: react1 }\n        break;\n    case 1:\n        let react2 = flow.get('face1_reaction2')\n        return { topic: 'face1', payload: react2 }\n        break;\n    case 2:\n        let react3 = flow.get('face1_reaction3')\n        return { topic: 'face1', payload: react3 }\n        break;\n    case 3:\n        let react4 = flow.get('face1_reaction4')\n        return { topic: 'face1', payload: react4 }\n        break;\n    case 4:\n        let react5 = flow.get('face1_reaction5')\n        return { topic: 'face1', payload: react5 }\n        break;\n    default:\n        break\n}",
+        "func": "let ans1 = flow.get('face1_answer1_count');\nlet ans2 = flow.get('face1_answer2_count');\nlet ans3 = flow.get('face1_answer3_count');\nlet ans4 = flow.get('face1_answer4_count');\nlet ans5 = flow.get('face1_answer5_count');\n\nlet threshold = flow.get('face1_poll_threshold') || 50;\n\nlet answers = [ans1, ans2, ans3, ans4, ans5];\n\nvar max = answers[0];\nvar maxIndex = 0;\n\nfor (var i = 1; i < answers.length; i++) {\n    if (answers[i] > max) {\n        maxIndex = i;\n        max = answers[i];\n    }\n}\n\n// let result = Math.round((ans1 / (ans1 + ans2) * 100));\nswitch (maxIndex) {\n    case 0:\n        let react1 = flow.get('face1_reaction1')\n        return { topic: 'face1', payload: react1 }\n        break;\n    case 1:\n        let react2 = flow.get('face1_reaction2')\n        return { topic: 'face1', payload: react2 }\n        break;\n    case 2:\n        let react3 = flow.get('face1_reaction3')\n        return { topic: 'face1', payload: react3 }\n        break;\n    case 3:\n        let react4 = flow.get('face1_reaction4')\n        return { topic: 'face1', payload: react4 }\n        break;\n    case 4:\n        let react5 = flow.get('face1_reaction5')\n        return { topic: 'face1', payload: react5 }\n        break;\n    default:\n        break\n}\nreturn",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -3829,7 +3829,7 @@
         "wires": [
             [
                 "e1cb618a.ce3ed",
-                "c1f915d0.a25d68"
+                "0f98b1787a14d5a5"
             ]
         ]
     },
@@ -5057,7 +5057,7 @@
         "type": "function",
         "z": "52bac4d7.a2850c",
         "name": "Calculate Guage Value",
-        "func": "let ans1 = flow.get('face2_answer1_count') || 0;\nlet ans2 = flow.get('face2_answer2_count') || 0;\nlet ans3 = flow.get('face2_answer3_count') || 0;\nlet ans4 = flow.get('face2_answer4_count') || 0;\nlet ans5 = flow.get('face2_answer5_count') || 0;\n\nlet answers = [ans1, ans2, ans3, ans4, ans5];\n\nvar max = answers[0];\nvar maxIndex = 0;\n\nfor (var i = 1; i < answers.length; i++) {\n    if (answers[i] > max) {\n        maxIndex = i;\n        max = answers[i];\n    }\n}\nlet total = ans1 + ans2 + ans3 + ans4 + ans5;\nlet result1 = Math.round((answers[0] / total) * 100)\nlet result2 = Math.round((answers[1] / total) * 100)\nlet result3 = Math.round((answers[2] / total) * 100)\nlet result4 = Math.round((answers[3] / total) * 100)\nlet result5 = Math.round((answers[4] / total) * 100)\n\nreturn [{ topic: 'Answer 1', payload: result1 }, { topic: 'Answer 2', payload: result2 }, { topic: 'Answer 3', payload: result3 }, { topic: 'Answer 4', payload: result4 }, { topic: 'Answer 5', payload: result5 }]\n// return { topic: 'result', payload: total}",
+        "func": "let ans1 = flow.get('face2_answer1_count') || 0;\nlet ans2 = flow.get('face2_answer2_count') || 0;\nlet ans3 = flow.get('face2_answer3_count') || 0;\nlet ans4 = flow.get('face2_answer4_count') || 0;\nlet ans5 = flow.get('face2_answer5_count') || 0;\n\nlet answers = [ans1, ans2, ans3, ans4, ans5];\n\nvar max = answers[0];\nvar maxIndex = 0;\n\nfor (var i = 1; i < answers.length; i++) {\n    if (answers[i] > max) {\n        maxIndex = i;\n        max = answers[i];\n    }\n}\nlet total = ans1 + ans2 + ans3 + ans4 + ans5;\nlet result1 = Math.round((answers[0] / total) * 100)\nlet result2 = Math.round((answers[1] / total) * 100)\nlet result3 = Math.round((answers[2] / total) * 100)\nlet result4 = Math.round((answers[3] / total) * 100)\nlet result5 = Math.round((answers[4] / total) * 100)\n\nreturn [{ topic: '1', payload: result1 }, { topic: '2', payload: result2 }, { topic: '3', payload: result3 }, { topic: '4', payload: result4 }, { topic: '5', payload: result5 }]\n// return { topic: 'result', payload: total}",
         "outputs": 5,
         "noerr": 0,
         "initialize": "",
@@ -5553,18 +5553,20 @@
         "type": "subflow:2843e038da0bd592",
         "z": "52bac4d7.a2850c",
         "name": "",
-        "x": 3930,
-        "y": 2060,
+        "x": 3630,
+        "y": 2160,
         "wires": [
             [
-                "47f2b36d.fb58c4"
+                "47f2b36d.fb58c4",
+                "c80345e43aa95c7a"
             ],
             [
                 "84e5a4c2.baba28",
                 "8f106d41.e3f38"
             ],
             [
-                "c1f6494f.a0901"
+                "c1f6494f.a0901",
+                "c80345e43aa95c7a"
             ],
             [
                 "16f55a3a.8b061e",
@@ -6087,9 +6089,12 @@
         "sourceFolder": "src",
         "deployedVersion": "5.1.1",
         "x": 3520,
-        "y": 580,
+        "y": 560,
         "wires": [
-            [],
+            [
+                "c1f915d0.a25d68",
+                "44920056.56b72"
+            ],
             []
         ]
     },
@@ -6111,9 +6116,12 @@
         "sourceFolder": "src",
         "deployedVersion": "5.1.1",
         "x": 3520,
-        "y": 540,
+        "y": 500,
         "wires": [
-            [],
+            [
+                "57c71e36.9fe28",
+                "44920056.56b72"
+            ],
             []
         ]
     },
@@ -6135,9 +6143,11 @@
         "sourceFolder": "src",
         "deployedVersion": "5.1.1",
         "x": 3520,
-        "y": 500,
+        "y": 440,
         "wires": [
-            [],
+            [
+                "44920056.56b72"
+            ],
             []
         ]
     },
@@ -6228,6 +6238,25 @@
         "x": 4020,
         "y": 1440,
         "wires": []
+    },
+    {
+        "id": "c80345e43aa95c7a",
+        "type": "function",
+        "z": "52bac4d7.a2850c",
+        "name": "function 1",
+        "func": "switch (msg.topic) {\n    case 'face1_resetPoll':\n        return { topic: 'face1', payload: 'face1_emotion6' }\n    case 'face2_resetPoll':\n        return { topic: 'face2', payload: 'face2_emotion6' }\n}",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 4120,
+        "y": 1880,
+        "wires": [
+            [
+                "e6174819.4c8868"
+            ]
+        ]
     },
     {
         "id": "7a44eaa8.b0adc4",
