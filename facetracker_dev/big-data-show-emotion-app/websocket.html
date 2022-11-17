@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<script src="/js/lib/jquery-3.4.1.min.js"></script>
+	<script>
+	/*var socket = new WebSocket("ws://192.168.4.1:1880/ws/digits");
+
+		
+
+	socket.onopen = function(e) {
+		socket.send('21');
+		alert('data sent: 21');
+	} 
+
+	socket.onerror = function(error) {
+		alert(`[error] ${error.message}`);
+	};*/
+
+	jQuery(document).ready(function($){
+
+		$('#send').on('click', function() {
+
+
+			$.ajax({
+				type: "POST",
+				url: "https://192.168.4.1:1880/data",
+				data: {happy: $('#happyness').val(),
+					   sad:	12},
+				success: function(data){x
+					console.log(data)
+				},
+				dataType: 'json'
+				});
+
+			return false;
+
+		})
+
+		
+	})
+
+  </script>
+</head>
+<body>
+	<form action="http://192.168.4.1:1880/mysitepost" method="post">
+		<input type="text" name="happyness" id="happyness">
+		<input type="submit" id="send" value="send">
+	</form>
+</body>
+</html>

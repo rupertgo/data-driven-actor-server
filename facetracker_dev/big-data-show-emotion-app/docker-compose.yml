@@ -1,0 +1,9 @@
+version: '3'
+services:
+  web:
+    image: big-data-show-emotion-app
+    build: .
+    container_name: emotion-app
+    restart: always
+    ports:
+      - "8080:80"

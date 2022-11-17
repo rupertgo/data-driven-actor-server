@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<title>Face tracker</title>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="css/app.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<script src="/js/lib/clmtrackr/examples/js/libs/utils.js"></script>
+		<script src="/js/lib/clmtrackr/build/clmtrackr.js"></script>
+	
+		<script src="/js/lib/jquery-3.4.1.min.js"></script>
+		<script src="/js/lib/clmtrackr/examples/js/emotion_classifier.js"></script>
+		<script src="/js/lib/clmtrackr/examples/js/emotionmodel.js"></script>
+		<script src="/js/app/app-emotion.js"></script>
+	</head>
+	<body>
+	
+		<div id="fps"></div>
+		<div id="content">
+			<div id="container">
+				<video id="videoel" preload="auto" loop playsinline autoplay>
+				</video>
+				<canvas id="overlay"></canvas>
+			</div>
+
+		
+			<a id="start" class="action">Start!</a>
+			<a id="enable-face-overlay">?</a>
+			
+			<div class="happy emotion">
+			happy</div>
+			<div class="sad emotion">
+			sad</div>
+
+			
+		</div>
+		
+	</body>
+</html>
