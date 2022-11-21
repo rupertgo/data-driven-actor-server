@@ -15,6 +15,13 @@ services:
         - "1880:1880"
         networks:
         - node-red-net
+    web:
+        image: big-data-show-emotion-app
+        build: .
+        container_name: emotion-data-app
+        restart: always
+        ports:
+        - "8080:80"
 
 volumes:
     node-red-data:
